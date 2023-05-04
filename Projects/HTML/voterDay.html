@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <form action=""> -->
+      <h1>State Elections of India</h1>
+      <label for=""> Country: </label
+      ><input type="text" id="countryname" /><br /><br />
+      <label for=""> Voter Id: </label
+      ><input type="text" id="voterId" /><br /><br />
+      <label>Aadhar Number:</label
+      ><input type="number" id="aadhar" /><br /><br />
+      <label>Age:</label><input type="number" id="age" value="" /><br /><br />
+
+      <button type="button" onclick="submitVote()">Submit vote</button>
+    <!-- </form> -->
+    <h3 id="eligible"></h3>
+    <script>
+      function submitVote() {
+        countryNameValidate();
+        ageValidate();
+        validateVoteId();
+        aadharvalidate();
+
+        (countryNameValidate() &&
+        ageValidate() &&
+        aadharvalidate() &&
+        validateVoteId() == true )
+          ? document.getElementById("eligible").innerHTML =
+              `<p>you are  eligible for voting</p>`
+          :document.getElementById("eligible").innerText =
+              "you are not eligible for voting";
+      }
+      function validateVoteId() {
+        let voterLength = document.getElementById("voterId").value.length;
+        // console.log(voterLength);
+        let IdValid = false;
+       ( voterLength == 10) ?  IdValid = true: alert(`enter correct voterId`);
+        return IdValid
+      }
+      function countryNameValidate() {
+        let name = document.getElementById("countryname").value;
+        let IdValid = false;
+        (name == "india") ?  IdValid = true : alert(`enter correct countryName`);
+        // console.log(name);
+        return IdValid
+      }
+      function ageValidate() {
+        let age = document.getElementById("age").value;
+        // console.log(age);
+        let IdValid = false;
+        age > 18 ? IdValid = true : alert("enter the correct age");
+        return IdValid
+      }
+      function aadharvalidate() {
+        let aadharLength = document.getElementById("aadhar").value.length;
+        // console.log(aadharLength);
+        let IdValid = false;
+        (aadharLength == 12) ?  IdValid = true: alert(`enter correct aadharNumber `);
+        return IdValid
+      }
+    </script>
+  </body>
+</html>

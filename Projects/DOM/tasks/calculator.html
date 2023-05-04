@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <script>
+      function Calculator() {
+        
+        this.sum = (fNum,sNum) =>{
+          
+          let result = fNum + sNum;
+          
+          alert(`"result for sum operation" : ${result}`);
+        };
+        this.multiply = (fNum,sNum)=> {
+          
+          let result = fNum * sNum;
+          alert(`"result for multiply operation" : ${result}`);
+        };
+        this.subtraction =  (fNum,sNum)=> {
+          let result = fNum - sNum;
+          alert(`"result for subtraction operation" : ${result}`);
+        };
+        this.division =  (fNum,sNum) =>{
+         
+          let result = fNum / sNum;
+          alert(`"result for division operation" : ${result}`);
+        };
+      }
+      let obj = new Calculator();
+      let fNum = Number(prompt("enter the first Number"));
+      let sNum = Number(prompt("enter the second Number"));
+     let res =  Number(prompt("press 1 => add, 2 => sub, 3 =>mul, 4 =>div"));
+     (res == 1) ? obj.sum(fNum,sNum) : (res == 2) ? obj.subtraction(fNum,sNum) : (res == 3) ? obj.multiply(fNum,sNum) : (res == 4) ? obj.division(fNum,sNum) : alert("check correct operation")
+    </script>
+  </body>
+</html>

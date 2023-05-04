@@ -1,0 +1,12 @@
+.cardslist{
+    display: flex;
+    margin-top: 50px;
+    justify-content:space-around;
+    padding: 20px;
+}
+img{
+    height:200px;
+    width: 250px;
+   
+}
+

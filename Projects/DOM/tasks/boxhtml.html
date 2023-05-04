@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: block;
+            text-align: center;
+            border: 5px solid black; 
+            padding: 10px;
+            height: 150px;
+            width: 150px;
+            margin: auto;
+            
+        }
+        .children1{
+            border: 3px solid blue;
+            width: 150px; 
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="child">
+            layer box
+            <div id="child1" class="children1"></div>
+        
+        <button type="button" onclick="increaselayer()">click</button>
+        </div>
+        
+        
+    </div>
+    <script>
+        let id = 1;
+        function increaselayer(){
+            let child = document.getElementById("child1");
+            let clone = child.cloneNode(true);
+            
+            clone.id= `child${id}`;
+            id++;
+            
+            child.parentNode.insertBefore(clone, child.nextSibling);
+            
+
+        }
+    </script>
+</body>
+</html>

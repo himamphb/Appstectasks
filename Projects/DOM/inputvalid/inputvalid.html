@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="inputvalid">
+      <input type="text" id="inputvalue" />
+
+      <button type="button" onclick="submit()">submit</button>
+      <br />
+    </div>
+    <script>
+    
+      let voules = ["a", "e", "i", "o", "u"];
+      let count = 0;
+
+      let element = document.getElementById("inputvalid");
+      function submit() {
+        let invalue = document.getElementById("inputvalue").value.split("");
+        let inputdata = document.getElementById("inputvalue").value;
+        if(inputdata === ""){
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Please enter input",
+          });
+        }else{
+          for (let i = 0; i < invalue.length; i++) {
+          
+          if (!isNaN(invalue[i])) {
+             alert("enter the alphabets only");
+            return;
+          }  
+            let pele = document.createElement("div");
+
+            pele.textContent = invalue[i];
+
+            element.appendChild(pele);
+            pele.style.border = "1px solid black";
+            pele.style.height = "50px";
+            pele.style.width = "50px";
+            pele.style.textAlign = "center";
+            for (let j = 0; j < voules.length; j++) {
+              if (voules[j] === invalue[i]) {
+                count++;
+              }
+            }
+          
+        }
+        let voulesele = document.createElement("h2");
+        voulesele.textContent = count;
+        element.appendChild(voulesele);
+        }
+        
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>

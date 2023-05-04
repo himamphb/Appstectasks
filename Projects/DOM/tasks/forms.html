@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div id="child"> 
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, rerum! Quam iste amet dolorem, repellat delectus accusantium eos iusto quisquam velit eligendi quod nostrum, voluptates atque modi a nobis aperiam?</p>
+            <button type="button" onclick="submit()">submit</button>
+        </div>
+    </div>
+    <script>
+        function submit(){
+            let res = document.body.childNodes[1].childNodes[0].textContent
+            console.log(res);
+        }
+    </script>
+</body>
+</html>

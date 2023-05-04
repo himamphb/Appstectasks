@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label> userName: </label>
+      <input type="text" id="name" />
+      <label>Id:</label>
+      <input type="text" id="userId" />
+      <label for="">Email:</label>
+      <input type="text" name="email" id="userEmail" />
+      <label for="">password:</label>
+      <input type="password" name="userName" id="userpassword" />
+      <input type="hidden" id="city" value="Ap">
+      <button type="button" onclick="submitData()" >submit</button>
+    </form>
+    <script>
+      function submitData() {
+        let username = document.getElementById("name").value;
+        let userId = document.getElementById("userId").value;
+        let userEmail = document.getElementById("userEmail").value;
+        let userpassword = document.getElementById("userpassword").value;
+        let city = document.getElementById("city").value;
+        console.log({username, userId, userEmail, userpassword,city});
+      }
+    </script>
+  </body>
+</html>

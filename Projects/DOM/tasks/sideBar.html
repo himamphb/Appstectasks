@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sideBar</title>
+  </head>
+
+  <link rel="stylesheet" href="./style.css" />
+
+  <body>
+    <nav class="sidenavbar">
+      <ul class="nav-links">
+        <li><a>Array</a></li>
+        <li><a>object</a></li>
+        <li><a>strings</a></li>
+        <li><a>number</a></li>
+        <li><a>Boolean</a></li>
+      </ul>
+    </nav>
+    <p id="content"></p>
+    <script>
+      let arr = [
+        "The Array object, as with arrays in other programming languages, enables storing a collection of multiple items under a single variable name, and has members for performing common array operations.",
+        "An object method is an object property containing a function definition. ... JavaScript objects are containers for named values, called properties and methods.",
+        "JavaScript strings are for storing and manipulating text. A JavaScript string is zero or more characters written inside quotes.",
+        "The Number() method converts a value to a number. If the value cannot be converted, NaN is returned. Notes. For booleans, Number() returns 0 or 1.",
+        "A JavaScript Boolean represents one of two values: true or false. Boolean Values. Very often, in programming, you will need a data type that can only have one ...",
+      ];
+      let anchorlist = document.querySelectorAll("a");
+
+      for (let i = 0; i < anchorlist.length; i++) {
+        anchorlist[i].addEventListener("click", () => {
+          document.getElementById("content").textContent = arr[i];
+        });
+      }
+    </script>
+  </body>
+</html>

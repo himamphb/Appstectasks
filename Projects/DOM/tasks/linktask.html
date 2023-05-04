@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <ol class="linksllist">
+        <li><a href="http://sample.com/start#hand">sample</a></li>
+        <li>
+          <a href="http://crown.sample.net/advertisement/day.php">crown</a>
+        </li>
+        <li>
+          <a href="http://www.sample.com/?chin=step&minute=quicksand"
+            >quicksand</a
+          >
+        </li>
+        <li><a href="js_files/index1.js">index1</a></li>
+        <li><a href="./js_files/index2.js">index2</a></li>
+        <li><a href="./js_files/index3.js">index3</a></li>
+      </ol>
+    </div>
+    <script>
+      let links = document.querySelectorAll("a");
+
+      for (let i = 0; i < links.length; i++) {
+        (!links[i].href.includes("http://1"))
+          ? (links[i].style.color = "red")
+          : (links[i].style.color = "blue");
+      }
+    </script>
+  </body>
+</html>

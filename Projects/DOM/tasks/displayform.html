@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="child">
+        <p
+          id="paragraph"
+          style="color: blue; font-size: medium; font-family: sans-serif"
+        >
+          welcome to <span id="newspan">demo😉</span>
+        </p>
+      </div>
+
+      <button type="button" onclick="submit()">submit</button>
+    </div>
+
+    <script>
+      function submit() {
+        let newValue = document.querySelector("#paragraph");
+        let clone = newValue.cloneNode(true);
+
+        clone.id = "paragraph2";
+        newValue.parentNode.insertBefore(clone, newValue.nextSibling);
+        
+        document.getElementById("paragraph2").childNodes[1].textContent =
+          "React😎";
+
+        // let ele = document.createElement("p");
+        // let styleAtt = document
+        //   .getElementById("paragraph")
+        //   .getAttribute("style");
+        // ele.setAttribute("style", styleAtt);
+        // ele.innerHTML = "welcome to react";
+        // document.getElementById("paragraph2").appendChild(clone);
+      }
+      // let ele = document.getElementById("paragraph")
+      // let ans = ele.hasAttribute("class");
+      // ele.setAttribute("class","para1")
+      // let asn2 = ele.getAttribute("class");
+      // let an3 = ele.removeAttribute("class");
+      // console.log(an3);
+      // if(ans){
+      //     console.log(ans);
+      // }else{
+      //     ele.setAttribute("class","para1")
+      // }
+    </script>
+  </body>
+</html>

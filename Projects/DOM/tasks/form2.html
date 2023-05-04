@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <form action=""> -->
+      <label for=""> Name: </label>
+      <input type="text" id="name" />
+      <label for=""> id:</label>
+      <input type="text" class="userid" />
+      <label for=""> city: </label>
+      <input type="text" class="usercity" />
+      <label for=""> State: </label>
+      <input type="text" id="userstate" />
+      <label for=""> country: </label>
+      <input type="text" id="usercountry" />
+      <button type="button" onclick="submit()">submit</button>
+    <!-- </form> -->
+
+    <script>
+      
+      function submit() {
+      let userName = document.getElementById("name").value;
+      let userId = document.getElementsByClassName("userid")[0].value;
+      let userCity = document.querySelectorAll(".usercity")[0].value;
+      let userState = document.getElementsByTagName("input")[3].value;
+      let usercountry = document.querySelector("#usercountry").value;
+        console.log({ userName, userId, userCity, userState, usercountry });
+        
+      }
+    </script>
+  </body>
+</html>

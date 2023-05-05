@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #displayColor{
+            border: 2px solid #00ff00;
+            height: 100px;
+            width: 150px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <input
+        type="range"
+        min="0"
+        max="255"
+        id="range"
+        value="0"
+        onchange="rangeInputRed(this.value),changeColor()"
+
+
+      />
+
+      <input type="text" id="inputrange" value="10" onchange="inputChange()" />
+
+      <input
+        type="range"
+        min="0"
+        max="255"
+        id="range2"
+        value="0"
+        onchange="rangeInputGreen(this.value),changeColor()"
+      />
+
+      <input type="text" id="inputrange2" value="10" onchange="inputChange()" />
+
+      <input
+        type="range"
+        min="0"
+        max="255"
+        id="range3"
+        value="0"
+        onchange="rangeInputBlue(this.value),changeColor()"
+      />
+
+      <input type="text" id="inputrange3" value="10" onchange="inputChange()" />
+    </div>
+    <br>
+    <div id="displayColor"></div>
+    <script>
+        let inputrange = 0;
+        let inputrange2 = 0;
+        let inputrange3 = 0;
+
+      function rangeInputRed(val) {
+         inputrange = (document.getElementById("inputrange").value = val);
+        
+      }
+
+      function rangeInputBlue(val) {
+         inputrange2 = (document.getElementById("inputrange2").value = val);
+      }
+      function rangeInputGreen(val) {
+         inputrange3 = (document.getElementById("inputrange3").value = val);
+      }
+      
+      function changeColor(){
+        document.getElementById("displayColor").style.backgroundColor = `rgb(${inputrange},${inputrange2},${inputrange3})`;
+      }
+
+    //   function inputChange() {
+    
+    //   }
+    </script>
+  </body>
+</html>

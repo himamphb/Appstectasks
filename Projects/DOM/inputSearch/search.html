@@ -12,16 +12,21 @@
         <br>
         <input type="text" id="cityname">
         <button type="button" onclick="submitCity()">submit</button>
+        <button type="button" onclick="clearList()">clearList</button>
         <br>
         <label>Search for city:</label>
         <br>
-        <input type="text" id="citysearch">
+        <input type="text" id="citysearch" value="">
         <button type="button" onclick="submitSearch()">submit</button>
+        <button type="button" onclick="clearSearch()">clearSearch</button>
     </form>
-    <ol id="citylist">
+    <div>
+        <ul id="citylist">
         
-    </ol>
-    <h2 id="heading"></h2>
+        </ul>
+        <p id="heading"></p>
+    </div>
     <script src="./search.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

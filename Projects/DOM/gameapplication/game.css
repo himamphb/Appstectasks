@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+
+}
+#container{
+    margin-top: 50px;
+    margin-left: 100px;
+    
+
+}
+#rightdiv{
+    height: 100px;
+    width: 100px;
+    border: 2px solid #0000ff;
+    /* display: flex; */
+    float: right;
+    margin-top: 0px;
+    margin-right: 100px;
+}

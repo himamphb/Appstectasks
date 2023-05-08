@@ -4,21 +4,28 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+body{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
 
-body {
+.container {
+    position: absolute;
     display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
+  flex-wrap: nowrap;
+    align-items: flex-end;
+    justify-content:center;
     min-height: 100vh;
-    
+    top: 10px;
 }
 
 
 .card {
+
     position: relative;
-    width: 300px;
-    height: 350px;
+    width: 200px;
+    height: 200px;
     margin: 20px;
 }
 
@@ -29,11 +36,11 @@ body {
     backface-visibility: hidden;
     border-radius: 10px;
     overflow: hidden;
-    transition: .5s;
+   
 }
 
 .card .front {
-    transform: perspective(600px) rotateY(0deg);
+
     box-shadow: 0 5px 10px #000;
 }
 
@@ -51,52 +58,13 @@ body {
     height: 45px;
     line-height: 45px;
     color: #fff;
-    background: rgba(0,0,0,.4);
+    background: rgba(0, 0, 0, .4);
     text-align: center;
 }
 
-.card .back {
-    transform: perspective(600px) rotateY(180deg);
-    background: rgb(3, 35, 54);
-    padding: 15px;
-    color: #f3f3f3;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    box-shadow: 0 5px 10px #000;
-}
-
-.card .back .link {
-    border-top: solid 1px #f3f3f3;
-    height: 50px;
-    line-height: 50px;
-}
-
-.card .back .link a {
-    color: #f3f3f3;
-}
-
-.card .back h3 {
-    font-size: 30px;
-    margin-top: 20px;
-    letter-spacing: 2px;
-}
-
-.card .back p {
-    letter-spacing: 1px;
-} 
-
-.card:hover , .front {
-    background-image:url(https://th.bing.com/th/id/OIP.zwg3wez1z1a3SdtfEq6WngHaE6?pid=ImgDet&w=6144&h=4081&rs=1);
-}
-
-/* .card:hover .back {
-    transform: perspective(600px) rotateY(360deg);
-} */
-.card1{
+.card1 {
     position: relative;
-    width: 300px;
-    height: 450px;
+    width: 250px;
+    height: 400px;
     margin: 20px;
 }

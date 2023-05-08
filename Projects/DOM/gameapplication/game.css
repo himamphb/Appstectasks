@@ -8,12 +8,17 @@
     
 
 }
+#childinputs{
+    position: relative;
+}
 #rightdiv{
-    height: 100px;
-    width: 100px;
+    position: absolute;
+    height: 200px;
+    width: 350px;
     border: 2px solid #0000ff;
-    /* display: flex; */
-    float: right;
-    margin-top: 0px;
-    margin-right: 100px;
+    top: 10px;
+    left: 700px;
+    text-align: center;
+    padding: 30px;
+    
 }

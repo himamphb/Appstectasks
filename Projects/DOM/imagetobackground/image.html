@@ -1,83 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <div class="card card1">
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <img src="" id="bgimage" alt="" style="width: 100%; max-height: 100vh;" />
+    <div class="container">
+      
+      <div class="card card1">
         <div class="face front">
-            <img src="./image1.jpg" alt="">
-            <h3>Peacock</h3>
+          <img src="./image1.jpg" onclick="backImg(this.src)" alt="" />
+          <h3>Peacock</h3>
         </div>
-        <div class="face back">
-            <h3>Peacock</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius harum molestiae iste, nihil doloribus fugiat distinctio ducimus maxime totam nulla fuga odio non aperiam eos?</p>
-            <div class="link">
-                <a href="#">Details</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="face front">
-            <img src="./image2.jpg" alt="">
-            <h3>Rat</h3>
-        </div>
-        <div class="face back">
-            <h3>Rat</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius harum molestiae iste, nihil doloribus fugiat distinctio ducimus maxime totam nulla fuga odio non aperiam eos?</p>
-            <div class="link">
-                <a href="#">Details</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="face front">
-            <img src="./image3.jpeg" alt="">
-            <h3>Cat</h3>
-        </div>
-        <div class="face back">
-            <h3>Cat</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius harum molestiae iste, nihil doloribus fugiat distinctio ducimus maxime totam nulla fuga odio non aperiam eos?</p>
-            <div class="link">
-                <a href="#">Details</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="card">
-      <div class="face front">
-          <img src="./image4.jpeg" alt="">
-          <h3>Tree</h3>
       </div>
-      <div class="face back">
-          <h3>Tree</h3>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius harum molestiae iste, nihil doloribus fugiat distinctio ducimus maxime totam nulla fuga odio non aperiam eos?</p>
-          <div class="link">
-              <a href="#">Details</a>
-          </div>
-      </div>
-  </div>
 
-  <div class="card">
-    <div class="face front">
-        <img src="./image5.jpg" alt="">
-        <h3>Panda</h3>
+      <div class="card">
+        <div class="face front">
+          <img src="./image2.jpg" onclick="backImg(this.src)" alt="" />
+          <h3>Rat</h3>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="face front">
+          <img src="./image3.jpeg" onclick="backImg(this.src)" alt="" />
+          <h3>Cat</h3>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="face front">
+          <img src="./image4.jpeg" onclick="backImg(this.src)" alt="" />
+          <h3>Tree</h3>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="face front">
+          <img src="./image5.jpg" onclick="backImg(this.src)" alt="" />
+          <h3>Panda</h3>
+        </div>
+      </div>
     </div>
-    <div class="face back">
+
+    <script src="./index.js"></script>
+  </body>
+</html>
+
+<!-- <div class="face back">
         <h3>Panda</h3>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius harum molestiae iste, nihil doloribus fugiat distinctio ducimus maxime totam nulla fuga odio non aperiam eos?</p>
         <div class="link">
             <a href="#">Details</a>
         </div>
-    </div>
-</div>
-    
-    
-</body>
-</html>
+    </div> -->

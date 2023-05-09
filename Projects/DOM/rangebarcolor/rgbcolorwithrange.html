@@ -26,7 +26,7 @@
 
       />
 
-      <input type="text" id="inputrange" value="10" onchange="inputChange()" />
+      <input type="text" id="inputrange1" value="10" onchange="inputChange()" />
 
       <input
         type="range"
@@ -48,7 +48,7 @@
         onchange="rangeInputBlue(this.value),changeColor()"
       />
 
-      <input type="text" id="inputrange3" value="10" onchange="inputChange()" />
+      <input type="text" id="inputrange3" value="0" onchange="inputChange()" />
     </div>
     <br>
     <div id="displayColor"></div>
@@ -59,6 +59,7 @@
 
       function rangeInputRed(val) {
          inputrange = (document.getElementById("inputrange").value = val);
+         
         
       }
 
@@ -73,9 +74,7 @@
         document.getElementById("displayColor").style.backgroundColor = `rgb(${inputrange},${inputrange2},${inputrange3})`;
       }
 
-    //   function inputChange() {
     
-    //   }
     </script>
   </body>
 </html>

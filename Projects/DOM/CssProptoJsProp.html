@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = ["box-shadow", "background-img", "margin-top"];
+      let splitEle;
+      function convertArray() {
+        arr.forEach((element) => {
+          splitEle = element.split("");
+
+          let indexEle = splitEle.indexOf("-");
+          splitEle.splice(indexEle, 2, splitEle[indexEle + 1].toUpperCase());
+          return console.log(splitEle.join(""));
+        });
+      }
+
+      convertArray();
+    </script>
+  </body>
+</html>

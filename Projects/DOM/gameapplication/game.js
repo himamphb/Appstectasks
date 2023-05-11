@@ -9,39 +9,29 @@ function containsDuplicates(array) {
 
 function checkNumValid(e) {
   let inputStrValue = e.value;
-   convertedArray = inputStrValue.split("").map(Number);
-  if (
-    convertedArray.length < 4 ||
-    convertedArray.length > 4 ||
-    inputStrValue === ""
-  ) {
+  convertedArray = inputStrValue.split("").map(Number);
+  if (convertedArray.length !== 4) {
     Swal.fire("enter input that should contain only 4 numbers");
   } else {
     containsDuplicates(convertedArray);
   }
 }
 
-function randomGenerateNum1() {
-  input2 = Number(document.getElementById("input2").value);
-
-   res = 9999 - input2;
-
+function randomGenerateNum(id,flag) {
+  
+  if(flag === "thirdinput"){
+    input2 = Number(document.getElementById("input2").value);
+    res = 9999 - input2;
+    document.getElementById(id).value = res;
+  }else {
+    input4 = Number(document.getElementById("input4").value);
+    res = 9999 - input4;
+    document.getElementById(id).value = res;
+  }
   convertedArray = res.toString().split("").map(Number);
   containsDuplicates(convertedArray);
-
-  document.getElementById("input3").value = res;
-}
-
-function randomGenerateNum2() {
-  input4 = Number(document.getElementById("input4").value);
-
-   res = 9999 - input4;
-
-   convertedArray = res.toString().split("").map(Number);
-  containsDuplicates(convertedArray);
-
-  document.getElementById("input5").value = res;
-}
+    
+  } 
 
 function getTotalValue() {
   input1 = Number(document.getElementById("input1").value);
@@ -56,17 +46,16 @@ function getTotalValue() {
 
 function secretCodeGenerate() {
   input1 = document.getElementById("input1").value;
+  let secNum = "2";
+  secNum += input1.slice(0, 2);
 
-  arrInp = input1.split("").map(Number);
-  arrInp.unshift(2);
+  let lastEle = input1.slice(-2);
 
-  let popedEle = arrInp.pop();
-  arrInp.splice(4, 0, popedEle - 2);
-
-   res = Number(arrInp.join(""));
+  secNum += lastEle - 2;
+  let res = Number(secNum);
 
   let leftdiv = document.getElementById("secretcode");
   leftdiv.textContent = `generated-code:${res}`;
-  console.log(res);
+
   leftdiv.style.visibility = "hidden";
 }

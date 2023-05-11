@@ -23,34 +23,84 @@
       <div id="childinputs">
         <div class="col-sm-3" id="leftdiv">
           <label for="">Input1:</label>
-          <input class="form-control inputs" type="number"    id="input1" onchange="checkNumValid(this)"/>
-          
-          <br>
+          <input
+            class="form-control inputs"
+            type="number"
+            id="input1"
+            onchange="checkNumValid(this)"
+          />
+          <br />
+          <button
+            type="button"
+            class="btn btn-danger"
+            onclick="secretCodeGenerate()"
+          >
+            secretcode
+          </button>
+          <br />
           <label for="">input2:</label>
-          <input class="form-control inputs" type="number"  id="input2" onchange="checkNumValid(this)"/>
-          <br>
-          <label for="">input3:</label>
-          <input class="form-control inputs" type="number"  id="input4" onchange="checkNumValid(this)"/>
-          <br>
+          <input
+            class="form-control inputs"
+            type="number"
+            id="input2"
+            onchange="checkNumValid(this)"
+          />
+          <br />
+
           <label for="">Random number1:</label>
-          <input class="form-control" type="number"  id="input3" onchange="checkNumValid(this)"/><br>
-          <button type="button" class="btn btn-warning" onclick="randomGenerate1()">generate</button>
-          <br>
+          <input
+            class="form-control"
+            type="number"
+            id="input3"
+            onchange="checkNumValid(this)"
+          /><br />
+          <button
+            type="button"
+            class="btn btn-warning"
+            onclick="randomGenerateNum1()"
+          >
+            generate random number 1</button
+          ><br />
+          <label for="">input3:</label>
+          <input
+            class="form-control inputs"
+            type="number"
+            id="input4"
+            onchange="checkNumValid(this)"
+          />
+          <br />
+
+          <br />
           <label for="">Random number2:</label>
-          <input class="form-control" type="number"  id="input5" onchange="checkNumValid(this)"/><br>
-          <button type="button" class="btn btn-warning" onclick="randomGenerateCode()">generate</button>
-          <br>
-          <br>
-          <button type="button" class="btn btn-primary" onclick="getTotalValue()">
+          <input
+            class="form-control"
+            type="number"
+            id="input5"
+            onchange="checkNumValid(this)"
+          /><br />
+          <button
+            type="button"
+            class="btn btn-warning"
+            onclick="randomGenerateNum2()"
+          >
+            generate random number 2
+          </button>
+          <br />
+          <br />
+          <button
+            type="button"
+            class="btn btn-primary"
+            onclick="getTotalValue()"
+          >
             Total
           </button>
         </div>
         <div id="rightdiv">
-            <h4 id="secretcode"></h4>
+          <h4 id="secretcode"></h4>
         </div>
-        <br>
+        <br />
         <div id="leftdiv">
-            <h3 id="total"></h3>
+          <h3 id="total"></h3>
         </div>
         <script src="./game.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

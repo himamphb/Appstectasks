@@ -1,4 +1,5 @@
-let input1, input2, input3, input4, input5;
+let input1, input2, input3, input4, input5, arrInp, convertedArray, res;
+
 function containsDuplicates(array) {
   if (array.length !== new Set(array).size) {
     return Swal.fire("enter non-repeative numbers");
@@ -8,7 +9,7 @@ function containsDuplicates(array) {
 
 function checkNumValid(e) {
   let inputStrValue = e.value;
-  let convertedArray = inputStrValue.split("").map(Number);
+   convertedArray = inputStrValue.split("").map(Number);
   if (
     convertedArray.length < 4 ||
     convertedArray.length > 4 ||
@@ -20,25 +21,26 @@ function checkNumValid(e) {
   }
 }
 
-function randomGenerate1() {
-  let random = Math.floor(1000 + Math.random() * 9000);
-  let convertedArray = random.toString().split("").map(Number);
+function randomGenerateNum1() {
+  input2 = Number(document.getElementById("input2").value);
+
+   res = 9999 - input2;
+
+  convertedArray = res.toString().split("").map(Number);
   containsDuplicates(convertedArray);
-  document.getElementById("input3").value = random;
+
+  document.getElementById("input3").value = res;
 }
 
-function randomGenerateCode() {
-  let randomValue = Math.ceil(20000 + Math.random() * 10000);
-  let leftdiv = document.getElementById("secretcode");
-  leftdiv.textContent = `generated-code:${randomValue}`;
-  leftdiv.style.visibility = "hidden";
-
-  input1 = Number(document.getElementById("input1").value);
-  input2 = Number(document.getElementById("input2").value);
+function randomGenerateNum2() {
   input4 = Number(document.getElementById("input4").value);
-  input3 = Number(document.getElementById("input3").value);
-  let result = randomValue - input1 - input2 - input3 - input4;
-  document.getElementById("input5").value = result;
+
+   res = 9999 - input4;
+
+   convertedArray = res.toString().split("").map(Number);
+  containsDuplicates(convertedArray);
+
+  document.getElementById("input5").value = res;
 }
 
 function getTotalValue() {
@@ -50,4 +52,21 @@ function getTotalValue() {
   let totalValue = input1 + input2 + input3 + input4 + input5;
   document.getElementById("total").textContent = `Total-Value = ${totalValue}`;
   document.getElementById("secretcode").style.visibility = "visible";
+}
+
+function secretCodeGenerate() {
+  input1 = document.getElementById("input1").value;
+
+  arrInp = input1.split("").map(Number);
+  arrInp.unshift(2);
+
+  let popedEle = arrInp.pop();
+  arrInp.splice(4, 0, popedEle - 2);
+
+   res = Number(arrInp.join(""));
+
+  let leftdiv = document.getElementById("secretcode");
+  leftdiv.textContent = `generated-code:${res}`;
+  console.log(res);
+  leftdiv.style.visibility = "hidden";
 }

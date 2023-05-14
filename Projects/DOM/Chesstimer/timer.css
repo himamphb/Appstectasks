@@ -1,25 +1,26 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,700&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html,
+
 body {
     width: 100%;
     height: 100%;
     background-color: #14A7FF;
-}
-
-body {
     font-size: 100%;
     font-family: monospace, monospace;
 }
 
-main {
+
+.container{
     width: 100%;
     padding: 0 10px;
     box-sizing: border-box;
+    margin-top:200px;
 }
 
 .player {
@@ -39,13 +40,10 @@ main {
     align-items: center;
     justify-content: center;
     background-color: #FFFFFF;
-    box-shadow: inset 3px 3px 0 #000, 
-                inset -3px 3px 0 black, 
-                inset -3px -3px 0 black, 
-                inset 3px -3px 0 black;
+   
 }
 
-.player-2 {
+.player-1 {
     color: #FFFFFF;
     margin-top: 5px;
     background-color: #2D2C2C;
@@ -61,7 +59,8 @@ main {
 }
 
 .timer__start-bttn, 
-.timer__reset-bttn {
+.timer__reset-bttn,
+.timer__set-bttn {
     width: 100%;
     display: block;
     color: #020202;
@@ -89,49 +88,31 @@ main {
     color: #FFFFFF;
     background-color: #0071D5;
 }
-
-
-
-/* Media queries for mobile first develoment. */
-/* Media queries for landscape mode on mobile devices */
-@media only screen and (orientation: landscape) and (max-width: 850px) {
-    .player {
-        max-width: 610px;
-        flex-direction: row;
-        margin: 5px auto 0 auto;
-    }
-    .player__tile {
-        max-width: 300px;
-        max-height: 250px;
-        margin: 0 3px 5px 3px;
-    }
-    .player__digits {
-        font-size: 5rem;
-    }
-    .timer__buttons {
-        display: flex;
-        margin: 0 auto;
-        max-width: 610px;
-    }
-    .timer__start-bttn, 
-    .timer__reset-bttn {
-        display: block;
-        max-width: 300px;
-        margin: 0 3px 5px 3px;
-    }
+.timer__set-bttn{
+    color: #643843;
+    background-color: #E7CBCB;
 }
-
-/* Media queries for portrait mode */
-@media only screen and (orientation: portrait) and (min-width: 400px) {
-    .player__tile {
-        height: 400px;
-    }
-    .player__digits {
-        font-size: 6rem;
-    }
+select {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width:300px;
+    height: 50px;
+    text-align: center;
+    font-size: larger ;
+    font-weight: 500;
+  }
+.setTimer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    
 }
-
-/* Screen wider than 850px wide will use these settings. */
+label{
+    font-weight:600;
+    font-size:x-large;
+    font-family:'Poppins';
+}
 @media only screen and (min-width: 850px) {
     .player {
         margin: 1em auto 10px auto;

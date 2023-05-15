@@ -1,23 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,700&display=swap');
 body{
   padding: 24px;
-  
+  position: relative;
   background-origin: border-box ;
-  background-color:#FFF7D4;
-  opacity: 0.8;
+
 }
 .container{
+  
   margin: 0 auto;
   align-content: center;
   justify-content: center;
   border: 1px solid #03529c;
   border-radius: 20px;
+  height: 16rem;
   width: 40%;
   background-color: #FFF7D4;
+
 }
 h1{
   font-family:'Poppins';
   color: #4C3D3D !important;
+
 
 }
 #page-title{
@@ -25,7 +28,7 @@ h1{
   color: #03529c;
 }
 #input-wrapper{
-  margin: 24px 0;
+  margin: 24px 0 0 5rem;
  
   
 }
@@ -43,10 +46,12 @@ button{
   color: white;
 }
 .contact-entry{
+ 
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 6px;
+  margin-top: 2rem;
 }
 .name-initial{
 width: 36px;
@@ -59,10 +64,70 @@ align-items: center;
 justify-content: center;
 opacity: 0.7;
 }
-.full-name{
+.full-name, .number{
   font-size: 24px;
   margin-left: 8px;
   border-bottom: 1px solid #e3e3e3;
   padding: 6px;
   flex-grow: 1;
+}
+.formDetails{
+  position: absolute;
+  top: 15rem;
+  left: 25.5rem;
+  background-color: bisque;
+  border:1px solid #4C3D3D;
+  border-radius: 10px;
+  width: 40%;
+  height: 12rem;
+  margin: 50px auto;
+ display: none;
+ flex-direction: column;
+ justify-content: center;
+
+
+}
+.form{
+  margin: 1rem 0 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+label{
+  margin-left: 2rem;
+}
+.form input{
+  margin-right: 6rem;
+  height: 2rem;
+  padding: 5px;
+  width: 250px;
+  max-width: 100%;
+  border-width: thin;
+  border-radius: 10px;
+  
+}
+.formDetails button{
+  width: 12rem;
+  height: 2rem;
+  margin-left: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+}
+.topsection{
+  width: 100%;
+  height: 4rem;
+ display: flex;
+ align-items: center;
+ justify-content: space-evenly;
+ 
+}
+.topsection img{
+  width: 30px;
+}
+.btnadd{
+  margin-left: 11rem;
+  margin-top: 1rem;
 }

@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    /* border: 1px solid red; */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 250px;
+    height: 200px;
+}
+.childrens{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 100px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    
+}
+p{
+    border: 1px solid #ff0000;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+}

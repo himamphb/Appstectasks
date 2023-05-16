@@ -1,8 +1,12 @@
 {
-  "user": {
-    "id": 1,
-    "name": "John Doe",
-    "email": "xcvkp@example.com",
-    "state": "AP"
-  }
+  "user": [
+    {
+      "salary": "10000",
+      "id": 2
+    },
+    {
+      "salary": "20000",
+      "id": 3
+    }
+  ]
 }

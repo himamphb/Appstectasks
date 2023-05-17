@@ -70,7 +70,8 @@ body{
     box-shadow: 3px 3px 4px 1px rgb(78, 69, 78);
 }
 
-#next-button{
+#next-button, #submit-button{
+   
     padding:10px;
     border:none;
     background-color: purple;

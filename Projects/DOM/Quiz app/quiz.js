@@ -1,8 +1,10 @@
 let questionNumber = 0;
 let score = 0;
 let time;
-let totalTime = 10;
+let totalTime = 60;
 let sec = totalTime;
+let intervalTimer;
+let intervalStarted = false;
 
 let quizQuestions = [
   {
@@ -55,12 +57,33 @@ let opt_3 = document.getElementById("option3");
 let opt_4 = document.getElementById("option4");
 let next_btn = document.getElementById("next-button");
 let end_timer = document.getElementById("timer");
+let scoreBoard = document.getElementById("scoreId");
+let submitBtn = document.getElementById("submit-button");
+
+function endTimer() {
+  sec--;
+  end_timer.textContent = sec;
+  if (sec == 0) {
+    end_timer.textContent = sec;
+    clearInterval(intervalTimer);
+
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "You have exceeded the time limit!",
+    });
+  }
+}
 
 function showQuixQuestion() {
-  clearInterval(time);
-  endTimer();
-  time = setInterval(endTimer, 1000);
-  document.querySelectorAll("input[name = opt]").forEach((option) => (option.checked = false));
+  if (!intervalStarted) {
+    intervalTimer = setInterval(endTimer, 1000);
+    intervalStarted = true;
+  }
+
+  document
+    .querySelectorAll("input[name = opt]")
+    .forEach((option) => (option.checked = false));
 
   question_number.textContent = questionNumber + 1 + ".";
   quiz_question.textContent = quizQuestions[questionNumber].question;
@@ -68,17 +91,6 @@ function showQuixQuestion() {
   opt_2.textContent = quizQuestions[questionNumber].opt2;
   opt_3.textContent = quizQuestions[questionNumber].opt3;
   opt_4.textContent = quizQuestions[questionNumber].opt4;
-}
-
-function endTimer() {
-  end_timer.textContent = sec;
-  sec--;
-  if (sec == 0) {
-    sec = totalTime;
-    clearInterval(time);
-    questionNumber++;
-    showQuixQuestion();
-  }
 }
 
 next_btn.addEventListener("click", () => {
@@ -89,18 +101,23 @@ next_btn.addEventListener("click", () => {
       score++;
     }
   }
-  questionNumber++;
-  if (questionNumber >= quizQuestions.length) {
+  scoreBoard.textContent = `Score:${score}`;
+  scoreBoard.style.color = "purple";
+
+  if (questionNumber == quizQuestions.length - 1) {
     questionNumber = 0;
+    clearInterval(intervalTimer);
     Swal.fire(
-        'Good job!',
-        `you have scored ${score}`,
-        'success'
-      );
-          clearInterval(endTimer);
+      "click on the submit!",
+      `You have completed the test and your score is ${score} !`,
+      "success"
+    );
+    submitBtn.removeAttribute("disabled");
   } else {
+    questionNumber++;
     showQuixQuestion();
   }
 });
-
-
+submitBtn.addEventListener("click", () => {
+  location.reload();
+});

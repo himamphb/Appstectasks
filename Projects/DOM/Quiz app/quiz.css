@@ -13,7 +13,7 @@ body{
 }
 
 .container {
-    display: flex;
+    display:none;
     align-items: center;
     flex-direction: column;
     min-height: 400px;
@@ -71,7 +71,7 @@ body{
 }
 
 #next-button, #submit-button{
-   
+    display: none;
     padding:10px;
     border:none;
     background-color: purple;
@@ -84,4 +84,8 @@ body{
 }
 #next-button:active{
     box-shadow:none;    
+}
+.btn{
+    position: absolute;
+    top: 40px;
 }

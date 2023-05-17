@@ -76,6 +76,8 @@ function endTimer() {
 }
 
 function showQuixQuestion() {
+  document.querySelector(".container").style.display = "flex";
+  next_btn.style.display = "block";
   if (!intervalStarted) {
     intervalTimer = setInterval(endTimer, 1000);
     intervalStarted = true;
@@ -112,7 +114,7 @@ next_btn.addEventListener("click", () => {
       `You have completed the test and your score is ${score} !`,
       "success"
     );
-    submitBtn.removeAttribute("disabled");
+    submitBtn.style.display = "block";
   } else {
     questionNumber++;
     showQuixQuestion();

@@ -12,7 +12,7 @@
 <body>
     <button type="button" class="btn btn-dark" onclick="showQuixQuestion()">Start Quiz</button>
     <div class="container">
-        <h3 id="scoreId"></h3>
+        <!-- <h3 id="scoreId"></h3> -->
         <p class="heading">Quiz App</p>
         <p id="timer"></p>
         <div class="questionDiv">
@@ -33,6 +33,31 @@
             <input type="button" value="Submit" id="submit-button">
         </div>
     </div>
+    <div class="answers-container">
+        <h4 id="scoreCard"></h4>
+        <div class="buttonsDiv">
+            <button type="button" onclick="showAnswersBtn()" id="answersbtn">Answers</button>
+            <button type="button" onclick="resetBtn()" id="resetbtn">Reset</button>
+        </div>
+    </div>
+    <div class="childContainer">
+        <div class="questionDiv2">
+            <span id="question-number2"></span>
+            <span id="question-content2"></span>
+        </div>
+        <div class="optionsDiv2">
+            <input type="radio" name="optt" id="optt1">
+            <label for="optt1" id="opttion1"></label>
+            <input type="radio" name="optt" id="optt2">
+            <label for="optt2" id="opttion2"></label>
+            <input type="radio" name="optt" id="opt3">
+            <label for="optt3" id="opttion3"></label>
+            <input type="radio" name="optt" id="optt4">
+            <label for="optt4" id="opttion4"></label>
+            </div>
+            <input type="button" value="Next" id="next-buttton">
+    </div>
+
     <script src="./quiz.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>

@@ -12,11 +12,11 @@ body{
     width: 100%;
 }
 
-.container {
+.container, .childContainer {
     display:none;
     align-items: center;
     flex-direction: column;
-    min-height: 400px;
+    min-height: 300px;
     width: 400px;
     background-color: white;
     border-radius: 15px;
@@ -37,7 +37,7 @@ body{
     box-shadow: 0px 0px 2px 1px purple;
         
 }
-.questionDiv{
+.questionDiv, .questionDiv2{
     margin:8px;
     box-shadow: 0px 0px 2px 1px rgb(74, 70, 70);
     border-radius: 5px;
@@ -47,17 +47,17 @@ body{
     font-family: Roboto;
     text-align: center;
 }
-.optionsDiv{
+.optionsDiv, .optionsDiv2{
     display: flex;
     flex-direction: column;
     margin:6px 4px;    
     width: 100%;
     padding: 10px;
 }
-.optionsDiv input{
+.optionsDiv input, .optionsDiv2 input{
     visibility: hidden;    
 }
-.optionsDiv label{   
+.optionsDiv label, .optionsDiv2 label{   
     box-shadow: 0px 0px 4px 1px rgb(128, 123, 123);
     padding: 5px;
     border-radius: 3px;
@@ -70,7 +70,7 @@ body{
     box-shadow: 3px 3px 4px 1px rgb(78, 69, 78);
 }
 
-#next-button, #submit-button{
+#next-button, #submit-button, #next-buttton{
     display: none;
     padding:10px;
     border:none;
@@ -82,10 +82,50 @@ body{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     transition: 0.2s;
 }
-#next-button:active{
+#next-button:active,  #next-buttton:active{
     box-shadow:none;    
 }
 .btn{
     position: absolute;
     top: 40px;
+}
+.answers-container{
+   display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 10rem auto;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    width: 30%;
+    background-color: #ffffff;
+    height: 12rem;  box-shadow: 2px 2px 10px 1px rgb(102, 3, 102);
+    overflow: hidden;
+    padding: 10px;
+}
+.buttonsDiv{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    
+}
+.buttonsDiv button{
+    position: absolute;
+    top: 130px;
+    width: 20%;
+    height: 2.5rem;
+    border-width: thin;
+    border: none;
+    border-radius: 6px;
+    
+}
+#answersbtn{
+    background-color: green;
+    left: 40px;
+}
+#resetbtn{
+    background-color: red;
+    right: 40px;
 }

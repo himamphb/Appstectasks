@@ -5,6 +5,7 @@ let totalTime = 60;
 let sec = totalTime;
 let intervalTimer;
 let intervalStarted = false;
+let userAnswered = [];
 
 let quizQuestions = [
   {
@@ -60,6 +61,14 @@ let end_timer = document.getElementById("timer");
 let scoreBoard = document.getElementById("scoreId");
 let submitBtn = document.getElementById("submit-button");
 
+let question_number2 = document.getElementById("question-number2");
+let quiz_question2 = document.getElementById("question-content2");
+let optt_1 = document.getElementById("opttion1");
+let optt_2 = document.getElementById("opttion2");
+let optt_3 = document.getElementById("opttion3");
+let optt_4 = document.getElementById("opttion4");
+let next_bttn = document.getElementById("next-buttton");
+
 function endTimer() {
   sec--;
   end_timer.textContent = sec;
@@ -100,20 +109,17 @@ next_btn.addEventListener("click", () => {
   let correctOption = quizQuestions[questionNumber].correct;
   if (optionSelected.id != null) {
     if (optionSelected.id == correctOption) {
+      userAnswered.push(optionSelected.id)
       score++;
     }
+  
   }
-  scoreBoard.textContent = `Score:${score}`;
-  scoreBoard.style.color = "purple";
+  console.log(userAnswered);
 
   if (questionNumber == quizQuestions.length - 1) {
     questionNumber = 0;
     clearInterval(intervalTimer);
-    Swal.fire(
-      "click on the submit!",
-      `You have completed the test and your score is ${score} !`,
-      "success"
-    );
+    next_btn.style.display = "none";
     submitBtn.style.display = "block";
   } else {
     questionNumber++;
@@ -121,5 +127,43 @@ next_btn.addEventListener("click", () => {
   }
 });
 submitBtn.addEventListener("click", () => {
-  location.reload();
+  document.querySelector(".container").style.display = "none";
+  document.querySelector(".answers-container").style.display = "block";
+  document.getElementById("scoreCard").textContent = `You have scored in the test ${score} !!`
 });
+
+function showAnswersBtn(){
+  questionNumber = 0;
+  document.querySelector(".answers-container").style.display = "none";
+  document.querySelector(".childContainer").style.display = "block";
+  document.querySelector(".childContainer").style.display = "flex";
+  next_bttn.style.display = "block";
+  document
+    .querySelectorAll("input[name = optt]")
+    .forEach((option) => (option.checked = false));
+ 
+    question_number2.textContent = questionNumber + 1 + ".";
+    quiz_question2.textContent = quizQuestions[questionNumber].question;
+    optt_1.textContent = quizQuestions[questionNumber].opt1;
+    optt_2.textContent = quizQuestions[questionNumber].opt2;
+    optt_3.textContent = quizQuestions[questionNumber].opt3;
+    optt_4.textContent = quizQuestions[questionNumber].opt4;
+}
+
+next_bttn.addEventListener(
+  "click", () => {
+    let correctQuizOption = quizQuestions[questionNumber].correct;
+    
+    if (userAnswered[questionNumber] === correctQuizOption) {
+      let val = userAnswered[questionNumber]
+      console.log(val);
+      document.getElementById(val).style.background = "#00ff00";
+  }else {
+    document.getElementById(val).style.background = "#ff0000";
+  }
+}
+)
+
+function resetBtn(){
+  location.reload();
+}

@@ -40,6 +40,13 @@ function submitInputData() {
       errorNumber.style.color = "#ff0000";
     }
   }
+  try {
+    if(number.length > 10){
+      throw new TypeError("number should  be greater  than 10");
+    }
+  } catch (error) {
+    errorNumber.textContent = e.message;
+  }
 }
 
 function removeError(val) {

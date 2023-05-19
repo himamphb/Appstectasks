@@ -64,7 +64,7 @@ body{
     transition: 0.5s;
 }
 
-.optionsDiv input:checked + label{
+.optionsDiv input:checked {
     background-color: rgb(159, 84, 159);
     color:white;
     box-shadow: 3px 3px 4px 1px rgb(78, 69, 78);

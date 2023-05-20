@@ -9,10 +9,11 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
     border: 1px solid black;
     border-radius: 10px;
     border-width: thin;
-    margin: 100px auto;
+    margin: 100px 130px auto;
     height: 425px;
     width: 28rem;
     padding-left: 30px;
@@ -22,6 +23,16 @@ body{
     width: 240px;
     padding: 2px;
 }
-button{
+#user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 30%;
+    height: 20rem;
+    margin-left: 750px;
+    margin-top: -400px;
+    border: 1px solid #000000;
+    border-radius: 10px;
     
 }

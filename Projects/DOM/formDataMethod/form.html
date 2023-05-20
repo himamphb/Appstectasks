@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./form.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -17,60 +16,54 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="./form.css" />
   </head>
   <body>
     <div class="mainContainer">
-      <div class="input1">
-        <label for="validationCustom01" class="form-label">First name</label>
-        <input
-          type="text"
-          class="form-control"
-          id="validationCustom01"
-          
-          required
-        />
-        <div class="valid-feedback">Looks good!</div>
-      </div>
-      <div class="input2">
-        <label for="validationCustom02" class="form-label">Last name</label>
-        <input
-          type="text"
-          class="form-control"
-          id="validationCustom02"
-          
-          required
-        />
-        <div class="valid-feedback">Looks good!</div>
-      </div>
-      <div class="input3">
-        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1">
-      </div>
-      <div class="input4">
-        <label for="validationCustom01" class="form-label">Mobile</label>
-        <input
-          type="number"
-          class="form-control"
-          id="validationCustom01"
-          required
-        />
-        <div class="valid-feedback">Looks good!</div>
-      </div>
-      <div class="input5">
-        <label for="validationCustom04" class="form-label">State</label>
-        <select class="form-select" id="validationCustom04" required>
-          <option selected disabled value="">Choose...</option>
-          <option value="ap">Andhra Pradesh</option>
-          <option value="tn">Tamil Nadu</option>
-          <option value="ka">Karnataka</option>
-          <option value="ts">Telangana</option>
-        </select>
-        <div class="invalid-feedback">
-          Please select a valid state.
+      <form method="post">
+        <div class="input1">
+          <label for="validationCustom01" class="form-label">First name</label>
+          <input type="text" class="form-control" name="fname" required />
+          <div class="valid-feedback">Looks good!</div>
         </div>
-      </div>
-        <button class="btn btn-primary" type="submit">Submit form</button>
-      
+        <div class="input2">
+          <label for="validationCustom02" class="form-label">Last name</label>
+          <input type="text" class="form-control" name="lname" required />
+        </div>
+        <div class="input3">
+          <label for="exampleFormControlInput1" class="form-label"
+            >Email address</label
+          >
+          <input type="email" class="form-control" name="email" />
+        </div>
+        <div class="input4">
+          <label for="validationCustom01" class="form-label">Mobile</label>
+          <input type="number" class="form-control" name="phone" required />
+        </div>
+        <div class="input5">
+          <label for="validationCustom04" class="form-label">State</label>
+          <select class="form-select" name="state" required>
+            <option selected disabled value="">Choose...</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Telangana">Telangana</option>
+          </select>
+          <div class="invalid-feedback">Please select a valid state.</div>
+        </div>
+      </form>
+      <button class="btn btn-primary" type="submit" onclick="submitForm()">
+        Submit form
+      </button>
     </div>
+    <div id="user">
+      <h4>Form Details</h4>
+      <p id="userFname"></p>
+      <p id="userLname"></p>
+      <p id="userEmailId"></p>
+      <p id="userPhone"></p>
+      <p id="userState"></p>
+    </div>
+    <script src="./form.js"></script>
   </body>
 </html>

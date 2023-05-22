@@ -90,7 +90,7 @@ function submitForm() {
     if (userEmail[userEmail.indexOf(".") + 1] == userEmail[userEmail.length - 1]) {
       throw new TypeError("invalid email");
     }
-    if( @#&()*,./{}<>^%[]~`!$=\|;:?)
+    // if( /@#&()*,./{}<>^%[]~`!$=\|;:?/.test(userEmail)){}
   } catch (e) {
     valueFlag = false;
     errorEmail.textContent = e.message;

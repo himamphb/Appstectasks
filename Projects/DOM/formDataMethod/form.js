@@ -1,8 +1,8 @@
 let errorFname = document.getElementById("fnameErrorMsg");
-  let errorLname = document.getElementById("lnameErrorMsg");
-  let errorEmail = document.getElementById("emailErrorMsg");
-  let errorPhone = document.getElementById("phoneErrorMsg");
-  let errorState = document.getElementById("stateErrorMsg");
+let errorLname = document.getElementById("lnameErrorMsg");
+let errorEmail = document.getElementById("emailErrorMsg");
+let errorPhone = document.getElementById("phoneErrorMsg");
+let errorState = document.getElementById("stateErrorMsg");
 
 function submitForm() {
   const form = document.querySelector("form");
@@ -14,8 +14,8 @@ function submitForm() {
   const state = userData.get("state");
   const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   let valueFlag = true;
-
-  
+  const regX =
+    /^(?![.!#$%&'*+\/=?^_`{|}~-])(?:[a-zA-Z0-9]|(?:(?:([.])(?!\1)|[!#$%&'*+\/=?^_`{|}~-]))(?!@)){1,64}@(?=.{1,255}$)(?!\d+$)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/gm;
 
   try {
     if (fname.length == 0) {
@@ -29,10 +29,9 @@ function submitForm() {
         "starting letter of FirstName should be capital letter"
       );
     }
-    console.log(fname.match("/\d+/g"));
+    console.log(fname.match("/d+/g"));
 
     if (/\d/.test(fname)) {
-      
       throw new TypeError("FirstName should not contain numbers");
     }
   } catch (e) {
@@ -78,19 +77,19 @@ function submitForm() {
       throw new TypeError("invalid email");
     }
     if (userEmail.indexOf("@") <= 1) {
-      throw new TypeError(
-        "invalid email"
-      );
-    }
-    if (userEmail.indexOf(".") - userEmail.indexOf("@") <= 2) {
-      throw new TypeError(
-        "invalid email"
-      );
-    }
-    if (userEmail[userEmail.indexOf(".") + 1] == userEmail[userEmail.length - 1]) {
       throw new TypeError("invalid email");
     }
-    // if( /@#&()*,./{}<>^%[]~`!$=\|;:?/.test(userEmail)){}
+    if (userEmail.indexOf(".") - userEmail.indexOf("@") <= 2) {
+      throw new TypeError("invalid email");
+    }
+    if (
+      userEmail[userEmail.indexOf(".") + 1] == userEmail[userEmail.length - 1]
+    ) {
+      throw new TypeError("invalid email");
+    }
+    if (regX.test(userEmail)) {
+      throw new TypeError("local name");
+    }
   } catch (e) {
     valueFlag = false;
     errorEmail.textContent = e.message;

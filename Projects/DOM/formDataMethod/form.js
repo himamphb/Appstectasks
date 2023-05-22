@@ -1,3 +1,9 @@
+let errorFname = document.getElementById("fnameErrorMsg");
+  let errorLname = document.getElementById("lnameErrorMsg");
+  let errorEmail = document.getElementById("emailErrorMsg");
+  let errorPhone = document.getElementById("phoneErrorMsg");
+  let errorState = document.getElementById("stateErrorMsg");
+
 function submitForm() {
   const form = document.querySelector("form");
   const userData = new FormData(form);
@@ -6,7 +12,11 @@ function submitForm() {
   const userEmail = userData.get("email");
   const phone = userData.get("phone");
   const state = userData.get("state");
+  const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  let valueFlag = true;
+
   
+
   try {
     if (fname.length == 0) {
       throw new TypeError("FirstName should not empty");
@@ -19,8 +29,16 @@ function submitForm() {
         "starting letter of FirstName should be capital letter"
       );
     }
-  } catch (e) {
+    console.log(fname.match("/\d+/g"));
 
+    if (/\d/.test(fname)) {
+      
+      throw new TypeError("FirstName should not contain numbers");
+    }
+  } catch (e) {
+    valueFlag = false;
+    errorFname.textContent = e.message;
+    errorFname.style.color = "#ff0000";
     console.log(e.message);
   }
 
@@ -36,7 +54,13 @@ function submitForm() {
         "starting letter of LastName should be capital letter"
       );
     }
+    if (lname.includes(arr)) {
+      throw new TypeError("FirstName should not contain numbers");
+    }
   } catch (e) {
+    valueFlag = false;
+    errorLname.textContent = e.message;
+    errorLname.style.color = "#ff0000";
     console.log(e.message);
   }
 
@@ -45,15 +69,32 @@ function submitForm() {
       throw new TypeError("Email should not empty");
     }
     if (userEmail.indexOf(" ") >= 0) {
-      throw new TypeError("Email should not contain space");
+      throw new TypeError("invalid email");
     }
     if (userEmail.indexOf("@") == -1) {
-      throw new TypeError("Email should contain @");
+      throw new TypeError("invalid email");
     }
     if (userEmail.indexOf(".") == -1) {
-      throw new TypeError("Email should contain .");
+      throw new TypeError("invalid email");
     }
+    if (userEmail.indexOf("@") <= 1) {
+      throw new TypeError(
+        "invalid email"
+      );
+    }
+    if (userEmail.indexOf(".") - userEmail.indexOf("@") <= 2) {
+      throw new TypeError(
+        "invalid email"
+      );
+    }
+    if (userEmail[userEmail.indexOf(".") + 1] == userEmail[userEmail.length - 1]) {
+      throw new TypeError("invalid email");
+    }
+    if( @#&()*,./{}<>^%[]~`!$=\|;:?)
   } catch (e) {
+    valueFlag = false;
+    errorEmail.textContent = e.message;
+    errorEmail.style.color = "#ff0000";
     console.log(e.message);
   }
 
@@ -67,10 +108,16 @@ function submitForm() {
 
     if (phone.length > 10) {
       throw new TypeError(
-        "phone number should not contain more than 10 degits"
+        "phone number should not contain more than 10 digits"
       );
     }
+    if (phone.length < 10) {
+      throw new TypeError("phone number should not be less than 10 digits");
+    }
   } catch (e) {
+    valueFlag = false;
+    errorPhone.textContent = e.message;
+    errorPhone.style.color = "#ff0000";
     console.log(e.message);
   }
 
@@ -79,13 +126,20 @@ function submitForm() {
       throw new TypeError("Please select the state");
     }
   } catch (e) {
+    valueFlag = false;
+    errorState.textContent = e.message;
+    errorState.style.color = "#ff0000";
     console.log(e.message);
   }
+  if (valueFlag == true) {
+    document.getElementById("userFname").textContent = fname;
+    document.getElementById("userLname").textContent = lname;
+    document.getElementById("userEmailId").textContent = userEmail;
+    document.getElementById("userPhone").textContent = phone;
+    document.getElementById("userState").textContent = state;
+  }
+}
 
-    document.getElementById("userFname").textContent = `First Name : ${fname}`;
-    document.getElementById("userLname").textContent = `Last Name : ${lname}`;
-    document.getElementById("userEmailId").textContent = `Email : ${userEmail}`;
-    document.getElementById("userPhone").textContent = `Mobile Number : ${phone}`;
-    document.getElementById("userState").textContent = `State : ${state}`;
-  
+function clearErrorText(val) {
+  val.parentNode.lastElementChild.textContent = "";
 }

@@ -23,33 +23,38 @@
       <form method="post">
         <div class="input1">
           <label for="validationCustom01" class="form-label">First name</label>
-          <input type="text" class="form-control" name="fname" required />
-          <div class="valid-feedback">Looks good!</div>
+          <input type="text" class="form-control" name="fname" required  onfocus="clearErrorText(this)"/>
+          <p id="fnameErrorMsg"></p>
+          
         </div>
         <div class="input2">
           <label for="validationCustom02" class="form-label">Last name</label>
-          <input type="text" class="form-control" name="lname" required />
+          <input type="text" class="form-control" name="lname" required onfocus="clearErrorText(this)"/>
+          <p id="lnameErrorMsg"></p>
         </div>
         <div class="input3">
           <label for="exampleFormControlInput1" class="form-label"
             >Email address</label
           >
-          <input type="email" class="form-control" name="email" />
+          <input type="email" class="form-control" name="email" onfocus="clearErrorText(this)"/>
+          <p id="emailErrorMsg"></p>
         </div>
         <div class="input4">
           <label for="validationCustom01" class="form-label">Mobile</label>
-          <input type="number" class="form-control" name="phone" required />
+          <input type="number" class="form-control" name="phone" required onfocus="clearErrorText(this)" />
+          <p id="phoneErrorMsg"></p>
         </div>
         <div class="input5">
           <label for="validationCustom04" class="form-label">State</label>
-          <select class="form-select" name="state" required>
+          <select class="form-select" name="state" required onfocus="clearErrorText(this)">
             <option selected disabled value="">Choose...</option>
             <option value="Andhra Pradesh">Andhra Pradesh</option>
             <option value="Tamil Nadu">Tamil Nadu</option>
             <option value="Karnataka">Karnataka</option>
             <option value="Telangana">Telangana</option>
           </select>
-          <div class="invalid-feedback">Please select a valid state.</div>
+          <p id="stateErrorMsg"></p>
+     
         </div>
       </form>
       <button class="btn btn-primary" type="submit" onclick="submitForm()">
@@ -58,11 +63,12 @@
     </div>
     <div id="user">
       <h4>Form Details</h4>
-      <p id="userFname"></p>
-      <p id="userLname"></p>
-      <p id="userEmailId"></p>
-      <p id="userPhone"></p>
-      <p id="userState"></p>
+      <p>First Name : <span id="userFname" class="answers"></span></p>
+    
+      <p>Last Name : <span id="userLname" class="answers"></span></p>
+      <p>Email : <span id="userEmailId" class="answers"></span></p>
+      <p>Phone Number : <span id="userPhone" class="answers"></span></p>
+      <p>State : <span id="userState" class="answers"></span></p>
     </div>
     <script src="./form.js"></script>
   </body>

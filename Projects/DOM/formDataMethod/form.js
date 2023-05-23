@@ -14,8 +14,10 @@ function submitForm() {
   const state = userData.get("state");
   const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   let valueFlag = true;
-  const regX =
-    /^(?![.!#$%&'*+\/=?^_`{|}~-])(?:[a-zA-Z0-9]|(?:(?:([.])(?!\1)|[!#$%&'*+\/=?^_`{|}~-]))(?!@)){1,64}@(?=.{1,255}$)(?!\d+$)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/gm;
+  const regX = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+  const regX2 =  /[`!@#$%^&*()_+\=\[\]{};':"\\|,.<>\/?~]/;
+
+
 
   try {
     if (fname.length == 0) {
@@ -40,7 +42,7 @@ function submitForm() {
     errorFname.style.color = "#ff0000";
     console.log(e.message);
   }
-
+ 
   try {
     if (lname.length == 0) {
       throw new TypeError("LastName should not empty");
@@ -63,6 +65,11 @@ function submitForm() {
     console.log(e.message);
   }
 
+  const emailDataArray = userEmail.split("");
+  const emailMiddleArray = emailDataArray.slice(emailDataArray.indexOf("@") + 1,emailDataArray.indexOf("."))
+  const emailAfterExtensionArray = emailDataArray.slice(emailDataArray.indexOf(".")+1)
+  const emailArrayBeforeAtChar = emailDataArray.slice(0,emailDataArray.indexOf("@"));
+  
   try {
     if (userEmail.length == 0) {
       throw new TypeError("Email should not empty");
@@ -87,8 +94,14 @@ function submitForm() {
     ) {
       throw new TypeError("invalid email");
     }
-    if (regX.test(userEmail)) {
-      throw new TypeError("local name");
+    if (regX.test(emailArrayBeforeAtChar.join(""))) {
+      throw new TypeError("invalid email");
+    }
+    if(regX2.test(emailMiddleArray.join(""))){
+      throw new TypeError("invalid email");
+    }
+    if(regX.test(emailAfterExtensionArray.join("")) || /\d/.test(emailAfterExtensionArray.join(""))){
+      throw new TypeError("invalid email");
     }
   } catch (e) {
     valueFlag = false;

@@ -1,24 +1,29 @@
 const para1 = document.getElementById("latitudeText");
 const para2 = document.getElementById("longitudeText");
+let latValue;
+let lonValue;
 
-let id;
+const options = {
+  enableHighAccuracy: true,
+  maximumAge: 30000,
+  timeout: 27000,
+};
+
 function getLocation() {
-  let latitude = para1.textContent;
-  let longitude = para2.textContent;
-  getAddress(latitude, longitude);
-
+  
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showLocation, errorMsg);
-    //   id = navigator.geolocation.watchPosition(showLocation);
+    navigator.geolocation.getCurrentPosition(showLocation, errorMsg,options);
   }
+
 }
 
 function showLocation(position) {
-  para1.textContent = `Latitude : ${position.coords.latitude}`;
-  para2.textContent = `Longitude : ${position.coords.longitude}`;
-//   console.log(position);
-  // console.log(id);
-  // navigator.geolocation.clearWatch(id);
+  console.log("show1");
+  para1.textContent = position.coords.latitude;
+  para2.textContent = position.coords.longitude;
+  latValue = position.coords.latitude;
+  lonValue = position.coords.longitude;
+initMap()
 }
 
 function errorMsg(error) {
@@ -28,20 +33,34 @@ function errorMsg(error) {
   }
 }
 
-function getAddress(latitude, longitude) {
-  let geocoder = new google.maps.Geocoder();
-  let latlng = new google.maps.LatLng(latitude, longitude);
+let map;
 
-  geocoder.geocode({ latLng: latlng }, function (results, status) {
-    if (status == google.maps.GeocoderStatus.OK) {
-      if (results[0]) {
-        let address = results[0].formatted_address;
-        console.log(address);
-      } else {
-        console.log("No results found");
-      }
-    } else {
-      console.log("Geocoder failed due to: " + status);
-    }
+async function initMap() {
+  console.log("show3");
+  const { Map } = await google.maps.importLibrary("maps");
+  map = new Map(document.getElementById("map"), {
+    center: { lat: latValue, lng: lonValue },
+    zoom: 20,
   });
 }
+
+//   const geocoder = new google.maps.Geocoder();
+//   const infowindow = new google.maps.InfoWindow();
+// document.getElementById("submit").addEventListener("click", ()=>{
+//   geocodeLatLng(geocoder,map,infowindow);
+// })
+  
+
+
+// async function geocodeLatLng(geocoder,map,infowindow) {
+//   console.log(geocoder,infowindow);
+//   const latlng = {
+//     lat: parseFloat(latValue),
+//     lng: parseFloat(lonValue),
+//   };
+//   console.log(latlng);
+//  let resval = await geocoder.geocode({ location: latlng })
+//  console.log(resval);
+
+// }
+

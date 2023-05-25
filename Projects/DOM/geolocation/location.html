@@ -6,30 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        #mainDiv{
-            background-color:cornsilk;
-            display: flex;
-            flex-direction: column;
-            align-items:center;
-            justify-content: space-around;
-            border: 1px solid black;
-            border-radius:10px;
-            border-width: thin;
-            width: 20%;
-            height: 90px;
-            margin: 100px auto; 
-            color: crimson;
-        }
-        button{
-            position: absolute;
-            top: 10vh;
-            right:620px;
-            border-style: none;
-            background-color:blanchedalmond;
-            border-radius:2px;
-            
-            
-        }
+      /* #mainDiv {
+        background-color: cornsilk;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        border: 1px solid black;
+        border-radius: 10px;
+        border-width: thin;
+        width: 20%;
+        height: 90px;
+        margin: 100px auto;
+        color: crimson;
+      }
+      button {
+        top: 10vh;
+        right: 620px;
+        border-style: none;
+        background-color: blanchedalmond;
+        border-radius: 2px;
+      } */
+
+      #map {
+        height: 100%;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
     </style>
   </head>
   <body>
@@ -37,9 +44,46 @@
     <div id="mainDiv">
       <p id="latitudeText"></p>
       <p id="longitudeText"></p>
+      <div id="latlng"></div>
     </div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRVr17Wtci2mr81NJUnlWE11NS4BLl4uw"></script>
-
-<script src="./index.js"></script>
+    <div id="map"></div>
+    <script>
+      ((g) => {
+        var h,
+          a,
+          k,
+          p = "The Google Maps JavaScript API",
+          c = "google",
+          l = "importLibrary",
+          q = "__ib__",
+          m = document,
+          b = window;
+        b = b[c] || (b[c] = {});
+        var d = b.maps || (b.maps = {}),
+          r = new Set(),
+          e = new URLSearchParams(),
+          u = () =>
+            h ||
+            (h = new Promise(async (f, n) => {
+              await (a = m.createElement("script"));
+              e.set("libraries", [...r] + "");
+              for (k in g)
+                e.set(
+                  k.replace(/[A-Z]/g, (t) => "_" + t[0].toLowerCase()),
+                  g[k]
+                );
+              e.set("callback", c + ".maps." + q);
+              a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+              d[q] = f;
+              a.onerror = () => (h = n(Error(p + " could not load.")));
+              a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+              m.head.append(a);
+            }));
+        d[l]
+          ? console.warn(p + " only loads once. Ignoring:", g)
+          : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
+      })({ key: "AIzaSyD5d3pmMBCPCwdxRb1X4lk_a-U4WdlNF4U", v: "weekly" });
+    </script>
+    <script src="./index.js"></script>
   </body>
 </html>

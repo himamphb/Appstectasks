@@ -14,53 +14,30 @@ function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showLocation, errorMsg,options);
   }
-
-}
-
-function showLocation(position) {
-  console.log("show1");
-  para1.textContent = position.coords.latitude;
-  para2.textContent = position.coords.longitude;
-  latValue = position.coords.latitude;
-  lonValue = position.coords.longitude;
-initMap()
-}
-
-function errorMsg(error) {
-  // console.log(error);
-  if (error.code == error.PERMISSION_DENIED) {
-    alert("enable the location");
-  }
-}
-
-let map;
-
-async function initMap() {
-  console.log("show3");
-  const { Map } = await google.maps.importLibrary("maps");
-  map = new Map(document.getElementById("map"), {
-    center: { lat: latValue, lng: lonValue },
-    zoom: 20,
-  });
-}
-
-//   const geocoder = new google.maps.Geocoder();
-//   const infowindow = new google.maps.InfoWindow();
-// document.getElementById("submit").addEventListener("click", ()=>{
-//   geocodeLatLng(geocoder,map,infowindow);
-// })
   
+}
 
+// function showLocation(position) {
 
-// async function geocodeLatLng(geocoder,map,infowindow) {
-//   console.log(geocoder,infowindow);
-//   const latlng = {
-//     lat: parseFloat(latValue),
-//     lng: parseFloat(lonValue),
-//   };
-//   console.log(latlng);
-//  let resval = await geocoder.geocode({ location: latlng })
-//  console.log(resval);
+//     const { latitude, longitude } = position.coords;
+//     fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=40f25cef362f4f6590c517d5a721927e`)
+//       .then(response => response.json())
+//       .then(data => console.log(data.results[0].components.city)); 
 
 // }
 
+async function showLocation(position){
+  console.log(position);
+  const { latitude, longitude} = position.coords;
+  console.log(accuracy);
+  let data = await  fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=40f25cef362f4f6590c517d5a721927e`)
+  let jsonData = await data.json();
+  console.log(jsonData);
+
+}
+
+function errorMsg(error) {
+  if (error.code == error.PERMISSION_DENIED) {                      
+    alert("enable the location");
+  }
+}

@@ -6,7 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-     
+     #resultDiv{
+      position: absolute;
+      border: 1px solid black;
+      border-radius: 10px;
+      border-width: thin;
+      height: 230px;
+      width: 20%;
+      padding: 8px;
+      left: 75px;
+      top: 150px;
+     }
+     button{
+      position: relative;
+      top: 30px;
+      left: 80px;
+      border-style: none;
+      background-color: aquamarine;
+      border-radius: 5px;
+     }
+     #mainDiv{
+      position: absolute;
+      left: 80px;
+      top: 60px;
+     }
     </style>
   </head>
   <body>
@@ -15,7 +38,14 @@
       <p id="latitudeText"></p>
       <p id="longitudeText"></p>
     </div>
-    <div id="resultDiv"></div>
+    <div id="resultDiv">
+      <p id="country"></p>
+      <p id="state"></p>
+      <p id="city"></p>
+      <p id="suburb"></p>
+      <p id="road"></p>
+      <p id="postcode"></p>
+    </div>
    
     <script src="./index.js"></script>
   </body>

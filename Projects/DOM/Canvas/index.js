@@ -1,13 +1,68 @@
-function draw() {
-  const canvas = document.getElementById("mainCanvas");
-  const ctx = canvas.getContext("2d");
-  ctx.fillStyle = "rgb(200, 0, 0)";
-  ctx.fillRect(10, 10, 50, 50);
+let canvas = document.getElementById("myCanvas");
+let ctx = canvas.getContext("2d");
+let canvasOffsetX = canvas.offsetLeft;
+let canvasOffsetY = canvas.offsetTop;
 
-  ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
-  ctx.fillRect(30, 30, 50, 50);
+canvas.height = window.innerHeight - canvasOffsetY;
+canvas.width = window.innerWidth - canvasOffsetX;
+ctx.strokeStyle = "white";
+ctx.lineWidth = 5;
 
-//   ctx.fillRect(25, 25, 100, 100);
-    ctx.clearRect(45, 45, 60, 60);
-    ctx.strokeRect(50, 50, 50, 50);
+let color = "black";
+let thickness = 5;
+let isEraser = false;
+let thicknessChanged = false;
+let x = 0;
+
+let draw = document.querySelector(".fa-pencil");
+let eraser = document.querySelector(".fa-eraser");
+
+let isDrawing = false;
+
+canvas.addEventListener("mousedown", (e) => {
+    isDrawing = true;
+    drawLine(e)
+})
+
+canvas.addEventListener("mouseup", () => {
+    isDrawing = false;
+    ctx.beginPath();
+})
+
+function drawLine(e) {
+    console.log(e.clientX);
+    if (!isDrawing) return;
+    ctx.lineCap = "round";
+    if (!isEraser) ctx.strokeStyle = color;
+    if (thicknessChanged) ctx.lineWidth = thickness;
+    ctx.lineTo(e.clientX - canvasOffsetX, e.clientY - canvasOffsetY);
+    ctx.stroke();
+}
+
+canvas.addEventListener("mousemove", drawLine);
+
+function enableDraw() {
+    isEraser = false;
+    draw.style.backgroundColor = "#088395";
+    eraser.style.backgroundColor = "#fff";
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 5;
+}
+
+function enableEraser() {
+    isEraser = true;
+    eraser.style.backgroundColor = "#088395";
+    draw.style.backgroundColor = "#fff";
+    ctx.strokeStyle = "white";
+    ctx.lineWidth = 10;
+}
+
+function changeColor(col) {
+    color = col;
+}
+
+function changeThickness(value) {
+    document.querySelector(".thicknessValue").textContent = value;
+    thicknessChanged = true;
+    thickness = value;
 }

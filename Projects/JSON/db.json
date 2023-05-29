@@ -1,12 +1,125 @@
 {
-  "user": [
-    {
-      "salary": "10000",
-      "id": 2
-    },
-    {
-      "salary": "20000",
-      "id": 3
-    }
-  ]
-}
+    "cities": [
+      {
+        "id": 1,
+        "name": "Mumbai"
+      },
+      {
+        "id": 2,
+        "name": "Delhi"
+      },
+      {
+        "id": 3,
+        "name": "Bangalore"
+      },
+      {
+        "id": 4,
+        "name": "Hyderabad"
+      },
+      {
+        "id": 5,
+        "name": "Chennai"
+      },
+      {
+        "id": 6,
+        "name": "Kolkata"
+      },
+      {
+        "id": 7,
+        "name": "Ahmedabad"
+      },
+      {
+        "id": 8,
+        "name": "Pune"
+      },
+      {
+        "id": 9,
+        "name": "Jaipur"
+      },
+      {
+        "id": 10,
+        "name": "Surat"
+      },
+      {
+        "id": 11,
+        "name": "Lucknow"
+      },
+      {
+        "id": 12,
+        "name": "Kanpur"
+      },
+      {
+        "id": 13,
+        "name": "Nagpur"
+      },
+      {
+        "id": 14,
+        "name": "Patna"
+      },
+      {
+        "id": 15,
+        "name": "Indore"
+      },
+      {
+        "id": 16,
+        "name": "Thane"
+      },
+      {
+        "id": 17,
+        "name": "Bhopal"
+      },
+      {
+        "id": 18,
+        "name": "Ludhiana"
+      },
+      {
+        "id": 19,
+        "name": "Agra"
+      },
+      {
+        "id": 20,
+        "name": "Vadodara"
+      },
+      {
+        "id": 21,
+        "name": "Varanasi"
+      },
+      {
+        "id": 22,
+        "name": "Madurai"
+      },
+      {
+        "id": 23,
+        "name": "Coimbatore"
+      },
+      {
+        "id": 24,
+        "name": "Kochi"
+      },
+      {
+        "id": 25,
+        "name": "Visakhapatnam"
+      },
+      {
+        "id": 26,
+        "name": "Bhubaneswar"
+      },
+      {
+        "id": 27,
+        "name": "Amritsar"
+      },
+      {
+        "id": 28,
+        "name": "Aurangabad"
+      },
+      {
+        "id": 29,
+        "name": "Jodhpur"
+      },
+      {
+        "id": 30,
+        "name": "Chandigarh"
+      }
+    ]
+  }
+  

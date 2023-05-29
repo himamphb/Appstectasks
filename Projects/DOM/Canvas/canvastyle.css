@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.box {
+    width: 100%;
+    height: 100vh;
+    background-color: #00ffFF;
+    font-family: 'Roboto';
+}
+
+.container-area {
+    width: 100%;
+    height: calc(100vh-55px);
+    display: flex;
+}
+.control-buttons {
+    width: 5%;
+    height: 35rem;
+    /* border: 1px solid black; */
+}
+.draw-area {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#myCanvas {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+.control-buttons> div{
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ i {
+    border: 1px solid #707070;
+    padding: 10px;
+    border-radius: 30%; 
+    background-color: #FFF;
+}
+#thicknesRange {
+    margin-left: 5rem;
+}
+.thicknessValue {
+    margin-left: 11px;
+}

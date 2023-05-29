@@ -1,33 +1,34 @@
 
 let inputEle = document.querySelector('input');
-let result;
+let dataEle = document.getElementById("cityList");
 
 inputEle.addEventListener('input',(e)=>{
-    console.log(e.target.value);
+  
     debounceCbFun(e.target.value)
 })
 
-let debounceCbFun = debounce((text)=>{
-  
+let debounceCbFun = debounce(async (text) =>{
 
+  dataEle.innerHTML = " ";
+  
+try {
+  const response = await fetch("http://localhost:3000/cities");
+  result = await response.json();
+  console.log(result);
+  let inputEle = result.filter((data)=>{
+    return data.name.toLowerCase().includes(text);
+  },1000);
+  
+  for(let i = 0; i < inputEle.length; i++){
+    let option = document.createElement('option');
+    option.value = inputEle[i].name;
+    dataEle.append(option);
+  }
+} catch (error) {
+  console.error(error);
+}
     
 })
-
-async function getApiData() {
-  const url =
-    "http://localhost:3000/cities";
-  try {
-    const response = await fetch(url);
-    result = await response.json();
-    let resval =  result.filter((val) => val.name == )
-    console.log(result);
-  } catch (error) {
-    console.error(error);
-  }
-}
-getApiData();
-
-
 
 function debounce(callFunction) {
   let timeOut;

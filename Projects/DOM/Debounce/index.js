@@ -7,16 +7,13 @@ inputEle.addEventListener('input',(e)=>{
     debounceCbFun(e.target.value)
 })
 
-let debounceCbFun = debounce(async (text) =>{
-
+let debounceCbFun = debounce(async (val) =>{
   dataEle.innerHTML = " ";
-  
-try {
   const response = await fetch("http://localhost:3000/cities");
   result = await response.json();
   console.log(result);
   let inputEle = result.filter((data)=>{
-    return data.name.toLowerCase().includes(text);
+    return data.name.toLowerCase().includes(val);
   },1000);
   
   for(let i = 0; i < inputEle.length; i++){
@@ -24,10 +21,7 @@ try {
     option.value = inputEle[i].name;
     dataEle.append(option);
   }
-} catch (error) {
-  console.error(error);
-}
-    
+
 })
 
 function debounce(callFunction) {

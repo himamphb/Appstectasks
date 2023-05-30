@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send File</title>
+</head>
+<body>
+    <form action="">
+        <label for="file">choose the file</label>
+        <input type="file" name="file" id="file" accept=".pdf, .doc, .docx, .txt" required>
+        <br><br>
+        <label for="email">Enter the email</label>
+        <input type="email" name="email" id="email" pattern=".+@globex\.com" size="30" required>
+    </form><br>
+    <button type="button" ><a href="" download="">Download</a></button>
+    <button type="button" onclick="submitFile()">Submit</button>
+    <script src="./file.js"></script>
+</body>
+</html>

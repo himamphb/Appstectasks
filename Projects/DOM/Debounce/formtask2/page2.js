@@ -1,13 +1,13 @@
 
-const cityName = document.getElementById('city');
-const submitEle = document.querySelector('input[type=button]');
+let pageInput2 = document.getElementById("pageInput2");
+pageInput2.value = localStorage.getItem("inputVal");
+
 let ulListEle = document.getElementById('listElemets');
 
-submitEle.addEventListener('click',()=>{
-    debounceCbFun(cityName.value);
-   localStorage.setItem("inputValue",cityName.value);
-    console.log(localStorage.getItem(inputValue));
-})
+pageInput2.onblur = () => {
+    debounceCbFun(pageInput2.value);
+}
+
 
 let debounceCbFun = debounce(async (val) =>{
     ulListEle.innerHTML = " ";
@@ -35,4 +35,3 @@ let debounceCbFun = debounce(async (val) =>{
       }, 1000);
     };
   }
-  

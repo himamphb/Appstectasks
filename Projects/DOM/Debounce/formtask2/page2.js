@@ -1,5 +1,6 @@
 
 let pageInput2 = document.getElementById("pageInput2");
+
 pageInput2.value = localStorage.getItem("inputVal");
 
 let ulListEle = document.getElementById('listElemets');

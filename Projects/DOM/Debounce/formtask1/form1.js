@@ -5,8 +5,8 @@ let ulListEle = document.getElementById('listElemets');
 
 submitEle.addEventListener('click',()=>{
     debounceCbFun(cityName.value);
-   localStorage.setItem("inputValue",cityName.value);
-    console.log(localStorage.getItem(inputValue));
+  //  localStorage.setItem("inputValue",cityName.value);
+    // console.log(localStorage.getItem(inputValue));
 })
 
 let debounceCbFun = debounce(async (val) =>{

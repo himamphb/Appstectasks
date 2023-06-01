@@ -7,7 +7,5 @@ inputBtn.addEventListener("click", (e) => {
 e.preventDefault()
     let formData = new FormData(form);
     formInputValue = formData.get('city');
-    window.location.assign('page2.html');
-    let element = document.getElementById('pageInput2');
-    element.textContent = formInputValue;
+    
 })

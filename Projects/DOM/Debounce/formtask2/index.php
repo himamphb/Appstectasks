@@ -1,6 +1,6 @@
  <?php
-  //  echo $_POST["fname"]; 
-  // echo $_POST["lname"]; 
-  echo ('sucessfull')
+  $cityName =  $_POST["formInputValue"]; 
+   
+  echo ('sucessfull');
   ?>
  

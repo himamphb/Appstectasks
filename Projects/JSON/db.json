@@ -1,125 +1,22 @@
 {
-    "cities": [
-      {
-        "id": 1,
-        "name": "Mumbai"
-      },
-      {
-        "id": 2,
-        "name": "Delhi"
-      },
-      {
-        "id": 3,
-        "name": "Bangalore"
-      },
-      {
-        "id": 4,
-        "name": "Hyderabad"
-      },
-      {
-        "id": 5,
-        "name": "Chennai"
-      },
-      {
-        "id": 6,
-        "name": "Kolkata"
-      },
-      {
-        "id": 7,
-        "name": "Ahmedabad"
-      },
-      {
-        "id": 8,
-        "name": "Pune"
-      },
-      {
-        "id": 9,
-        "name": "Jaipur"
-      },
-      {
-        "id": 10,
-        "name": "Surat"
-      },
-      {
-        "id": 11,
-        "name": "Lucknow"
-      },
-      {
-        "id": 12,
-        "name": "Kanpur"
-      },
-      {
-        "id": 13,
-        "name": "Nagpur"
-      },
-      {
-        "id": 14,
-        "name": "Patna"
-      },
-      {
-        "id": 15,
-        "name": "Indore"
-      },
-      {
-        "id": 16,
-        "name": "Thane"
-      },
-      {
-        "id": 17,
-        "name": "Bhopal"
-      },
-      {
-        "id": 18,
-        "name": "Ludhiana"
-      },
-      {
-        "id": 19,
-        "name": "Agra"
-      },
-      {
-        "id": 20,
-        "name": "Vadodara"
-      },
-      {
-        "id": 21,
-        "name": "Varanasi"
-      },
-      {
-        "id": 22,
-        "name": "Madurai"
-      },
-      {
-        "id": 23,
-        "name": "Coimbatore"
-      },
-      {
-        "id": 24,
-        "name": "Kochi"
-      },
-      {
-        "id": 25,
-        "name": "Visakhapatnam"
-      },
-      {
-        "id": 26,
-        "name": "Bhubaneswar"
-      },
-      {
-        "id": 27,
-        "name": "Amritsar"
-      },
-      {
-        "id": 28,
-        "name": "Aurangabad"
-      },
-      {
-        "id": 29,
-        "name": "Jodhpur"
-      },
-      {
-        "id": 30,
-        "name": "Chandigarh"
-      }
+  "videos": {
+    "wildlife": [
+      "https://www.youtube.com/embed/es4x5R-rV9s",
+      "https://www.youtube.com/embed/QoaDkejcHSc",
+      "https://www.youtube.com/embed/g2GFHYvQqu0",
+      "https://www.youtube.com/embed/-ijR9hrjGcM"
+    ],
+    "entertainment": [
+      "https://www.youtube.com/embed/CwzjlmBLfrQ",
+      "https://www.youtube.com/embed/IVvVb_3rTjw",
+      "https://www.youtube.com/embed/2R5CJCOEMdY",
+      "https://www.youtube.com/embed/KYRorFBhpRA"
+    ],
+    "sports": [
+      "https://www.youtube.com/embed/Mvs1JXYfd6Q",
+      "https://www.youtube.com/embed/AFEZzf9_EHk",
+      "https://www.youtube.com/embed/CXLM08fZO5o",
+      "https://www.youtube.com/embed/8mRyCxpumOY"
     ]
   }
-  
+}

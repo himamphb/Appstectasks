@@ -13,11 +13,11 @@ let debounceCbFun = debounce(async (val) =>{
     method:'GET',
 
   });
-  result = await response.json();
+  let result = await response.json();
   console.log(result);
   let inputEle = result.filter((data)=>{
     return data.name.toLowerCase().includes(val);
-  },1000);
+  });
   
   for(let i = 0; i < inputEle.length; i++){
     let option = document.createElement('option');

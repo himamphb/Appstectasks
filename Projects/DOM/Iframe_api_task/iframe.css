@@ -1,0 +1,28 @@
+body{
+    box-sizing: border-box;
+    background-color:cornsilk;
+}
+
+#search_box{
+    position: absolute;
+    top: 3rem;
+    left: 35rem;
+}
+#iframe_list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    margin: 0 auto;
+    top: 8rem;
+
+}
+#iframe_list iframe{
+width: 20%; 
+height: 40%;
+padding: 8px;
+margin: 5px;
+
+}

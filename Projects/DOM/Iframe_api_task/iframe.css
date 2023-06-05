@@ -1,6 +1,6 @@
 body{
     box-sizing: border-box;
-    background-color:cornsilk;
+    background-color:azure;
 }
 
 #search_box{
@@ -25,4 +25,8 @@ height: 40%;
 padding: 8px;
 margin: 5px;
 
+}
+input[type=button]{
+    color:hotpink;
+    background-color: #ffffff;
 }

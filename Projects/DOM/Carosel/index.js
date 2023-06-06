@@ -1,10 +1,24 @@
-let btnEle_1 = document.getElementById('btn1');
-let btnEle_2 = document.getElementById('btn2');
+const images = document.querySelectorAll('img');
+let counter = 0;
+const btn1 = document.getElementById("btn1");
+const btn2 = document.getElementById("btn2");
 
-btnEle_1.addEventListener('click',() => {
-    
+images.forEach((slides,index) => {
+    slides.style.left = `${index * 100}%`
 });
 
-btnEle_2.addEventListener('click',() => {
-    
+btn1.addEventListener("click",() => {
+    counter--;
+    slideImage();
 });
+
+btn2.addEventListener("click",() => {
+    counter++;
+    slideImage();
+});
+
+function slideImage(){
+    images.forEach((slide) => {
+        slide.style.transform = `translateX(-${counter * 100}%`;
+    })
+}

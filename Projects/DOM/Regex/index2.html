@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="number" name="" id="number">
+        <br><br>
+        <textarea name="" id="address" cols="20" rows="10"></textarea><br>
+        <button type="button" onclick="dataInput()">submit</button>
+    </div>
+    <script>
+        function dataInput(){
+            let pattern_1 = /^\d{10}$/;
+            let pattern_2 = /^[a-zA-Z0-9\s]+$/;
+            let inputVal_1 = document.getElementById('number').value;
+            let inputVal_2 = document.getElementById('address').value;
+            let result_1 = pattern_1.test(inputVal_1);
+            let result_2 = pattern_2.test(inputVal_2);
+            
+            if(!(result_1)){
+                alert('you input_1 is wrong');
+            }else if(!(result_2))
+            {
+                alert('your input_2 is wrong');
+            }
+            else{
+                alert('form submitted');
+            }
+         }
+    </script>
+</body>
+</html>

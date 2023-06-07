@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"
+      integrity="sha512-XMVd28F1oH/O71fzwBnV7HucLxVwtxf26XV8P4wPk26EDxuGZ91N8bsOttmnomcCD3CS5ZMRL50H0GgOHvegtg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+      integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+      body {
+        background-color: rgb(36, 33, 33);
+      }
+      .container {
+        
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        border: 1px solid black;
+        border-radius: 10px;
+        height: 150px;
+        width: 25%;
+        padding: 15px;
+        margin: 150px auto;
+        background-color: rgb(229, 229, 229);
+        box-shadow: 15px 15px 10px;
+
+      }
+      input {
+        color: rgb(182, 141, 141);
+        font-family: Poppins;
+        overflow: hidden;
+      }
+      
+      input::file-selector-button , button {
+        
+        color: rgb(182, 141, 141);
+        font-family: Poppins;
+        padding: 8px;
+        width: 100px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(85, 60, 81);
+        cursor: pointer;
+        margin-left: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <input type="file" name="file" id="file" multiple required />
+      <button type="button" id="btn1">zip</button>
+      <button type="button" id="btn2">download zipfile</button>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

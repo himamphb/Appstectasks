@@ -14,7 +14,7 @@ body {
 }
 
 .container {
-    width: 600рх;
+    width: 500px;
     background-color: white;
     padding: 30px;
     box-shadow: 0 2px 16px rgba(0, 0, 6, 0, .1);
@@ -39,5 +39,7 @@ body {
 }
 .content_box,.content.active{
     display: block;
+    margin-left: 80px;
+    margin-top: 15px;
 }
 

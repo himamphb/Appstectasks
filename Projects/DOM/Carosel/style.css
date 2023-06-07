@@ -9,15 +9,19 @@ body{
     /* height: 480vh; */
     width: 100vw;
     
+    
 }
 .listContainer > ul{
     list-style: none;
     margin: 0;
     padding: 0;
+   
 }
 li{
     list-style: none;
      inset: 0;
+     overflow: hidden;
+     
 }
 
 li > img{
@@ -27,7 +31,7 @@ li > img{
     height: 480px;
     object-fit: cover;
     object-position: center;
-    overflow: hidden;
+    
     
 }
 button{

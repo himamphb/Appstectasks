@@ -5,7 +5,7 @@ body{
 
 .listContainer{
     position: relative;
-    border: 1px solid #000000;
+    border: 1px solid #363636;
     /* height: 480vh; */
     width: 100vw;
     
@@ -43,6 +43,7 @@ button{
     border-radius: 10px;
     cursor: pointer;
     top: 30%;
+    color: #363636;
 
 }
 #btn1{

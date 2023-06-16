@@ -19,25 +19,45 @@
   </head>
   <body>
     <nav>
-      <div class="navbar-logo">
-        <img src="./navbar-logo.jpg" alt="logo" />
-      </div>
+      
       <div class="search-bar">
         <input type="search" name="search" id="search" />
       </div>
       <button type="button" class="btn btn-danger">search</button>
     </nav>
     <main>
-      <div class="main-container"></div>
-      <div class="card d-none" style="width: 18rem">
-        <img src="" class="card-img-top" alt="" style="height: 12rem" />
+      <!-- <div class="bg-color"></div> -->
+      <!-- <div class="main-container" ></div> -->
+      <div class="card d-none" style="width: 22rem;border-radius: 1rem;">
+        <img src="" class="card-img-top" alt="" style="height: 12rem;border-radius: 1rem;" />
         <div class="card-body d-flex justify-content-around">
           <h5 class="card-title"></h5>
           <p class="card-text"></p>
-          <button class="btn btn-warning recipeButton" style="height: 2.5rem">Recipe</button>
+          <button
+            class="btn btn-warning"
+            onclick="showRecipe(this)"
+            id="recipeButton"
+            style="height: 2.5rem"
+          >
+            Recipe
+          </button>
         </div>
       </div>
-      <div class="popup-box"></div>
+      <div class="popup-box show">
+        <h5 class="popup-box-header">chicken tandoori</h5>
+        <p id="popup-box-header-para"></p>
+        <button
+          class="btn btn-danger"
+          onclick="watchRecipeVideo()"
+          id="watchBtn"
+        >
+          <a href="" id="anchorElement" target="_blank">Recipe video</a>         
+        </button>
+        <button class="btn btn-warning" id="backBtn" onclick="goBackButton()">
+          go back
+        </button>
+      </div>
+     
     </main>
 
     <script src="./index.js"></script>

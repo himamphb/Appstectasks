@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@300&display=swap');
+
 body {
     box-sizing: border-box;
     margin: 0;
@@ -6,27 +8,19 @@ body {
 }
 
 nav {
+    height: 65px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     background-color: #2B2730;
-}
-
-nav img {
-    height: 5rem;
-    width: 6rem;
-    border-radius: 15px;
-    margin-left: 30px;
-    margin-top: 10px;
 }
 
 .search-bar {
     width: 25rem;
-    height: 2.2rem;
-    margin-top: 2rem;
-    margin-left: 25rem;
+    height: 50%;
+    margin-right: 1rem;
     background-color: #b6a5ad;
-    border-radius: 50px;
-    padding: 10px 20px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,36 +28,77 @@ nav img {
 
 .search-bar input {
     width: 100%;
+    height: 60%;
     border: none;
     outline: none;
-    background: transparent;
+    padding-left: 2rem;
+    background:transparent;
     flex: 1;
     font-size: 20px;
     font-family: Poppins;
 }
-nav button{
-    margin-right: 21rem;
-    height:2.3rem ;
-    margin-top: 29px;
-}
 .hidden{
     display: none;
 }
-.main-container{
+main{
+    height: 89.6vh;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 15px;
-    padding: 15px;
-    margin-left: 7rem;
-    margin-top: 2rem;
+    justify-items: center;
+    row-gap: 20px;
+    padding-top:1.5rem ;
+    background-image: linear-gradient(rgba(317, 175, 164, 0.7),rgba(59, 114, 114, 0.4));
+    overflow-y: scroll;
+    
+}
+
+.popup-box-header{
+    font-family: Poppins;
+    text-align: center;
+    font-weight: 400px;
+    font-size: x-large;
+    color:rgb(220,53,69);
+    text-shadow: 2px 2px 5px rgb(220,53,69);
+}
+#watchBtn{
+    margin-left: 2rem;
+    
+}
+#watchBtn a{
+    text-decoration: none;
+    color: #000000;
+}
+#backBtn{
+    margin-left: 14rem;
 }
 .popup-box{
-    position: relative;
+    position: absolute;
+    top: 25vh;
+    left: 25rem;
     margin: 0 auto;
-    top: 10vh;
-    border: 1px solid #28262b;
-    background-color: #e4d3db;
+    border: 2px solid #ffff;
     border-radius: 1.5rem;
-    height: 15rem;
-    width: 30%;
+    height: 25rem;
+    width: 40%;
+    padding: 1rem;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 0 10px 0 rgb(87, 87, 138);
+    overflow-wrap: break-word;
+    overflow-y: scroll;
+    z-index: 1;
+    
+}
+.popup-box::-webkit-scrollbar {
+    height: 20rem;
+  }
+
+.show{
+    display: none;
+}
+.displayDiv{
+    display: none;
+}
+.card{
+    box-shadow: 3px 3px 18px 4px rgb(119, 85, 85);
 }

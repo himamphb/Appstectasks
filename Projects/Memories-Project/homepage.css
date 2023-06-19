@@ -5,6 +5,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    
 }
 
 nav {
@@ -14,7 +15,8 @@ nav {
     height: 12vh;
     width: 100%;
     padding: 1rem;
-    background-color: #ffff;
+    /* background-color: #ffff; */
+    background-color: #E1E2F3;
 
 }
 nav h1 {
@@ -24,16 +26,60 @@ nav h1 {
 
 nav .btns {
     border: none;
-    background-color: #e1e2f3;
+    background-color: #ffff;
     border-radius: 7px;
-    padding: 12px;
+  width: 8rem;
+  height: 2.5rem;
     font-family: "Poppins"; 
+}
+nav .btns:hover {
+    background-color: rgb(255, 179, 80);
+    color: #ffff;
+    cursor: pointer;
 }
 
 nav .button-div{
  width: 20%;
  display: flex;
- justify-content: space-evenly;
+ justify-content: space-between;
+ /* border: 1px solid red; */
 
 }
+.container{
+    background-color: #E1E2F3;
+   padding-top: 2rem;
+    height: 88vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+
+    /* border: 1px solid black; */
+}
+.singup-div, .image-div{
+    width: 35%;
+    height: 95%;
+    /* border: 1px solid black; */
+}
+.singup-div{
+    background-color: #ffff;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+.image-div{
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffff;
+}
+.image-div img{
+    width: 95%;
+    height: 95%;
+    border-radius: 2.8em;
+    object-fit: cover;
+}
+
+
 

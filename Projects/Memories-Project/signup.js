@@ -1,6 +1,5 @@
 const formElement = document.querySelector("form");
-const submitForm = document.getElementById("submit-button");
-submitForm.addEventListener("click", (e) => {
+formElement.addEventListener("submit", (e) => {
   e.preventDefault();
   const newFormData = new FormData(formElement);
   const nameInput = newFormData.get("name-input");

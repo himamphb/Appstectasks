@@ -11,6 +11,10 @@ let jsonData, divClonedContainer, elemetLink;
 submitBtn.addEventListener("click", async () => {
   mainDiv.innerHTML = "";
   const inputValue = document.getElementById("search").value;
+  if(inputValue.length === 0){
+    alert("enter the input");
+  }
+else{
   let url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`;
   let data = await fetch(url);
   jsonData = await data.json();
@@ -27,14 +31,17 @@ submitBtn.addEventListener("click", async () => {
     mainDiv.appendChild(divClonedContainer);
 
   });
+}
 });
 
 async function showRecipe(e) {
   let id = e.parentElement.parentElement.id;
+  
   let data = await fetch(
     `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
   );
   let dataJson = await data.json();
+
   popupBoxHeader.textContent = dataJson.meals[0].strMeal;
   popupBoxInstuctions.textContent = dataJson.meals[0].strInstructions;
   elemetLink = dataJson.meals[0].strYoutube;

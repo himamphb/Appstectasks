@@ -8,12 +8,27 @@ export default class Counter extends Component {
       count: 0
     };
   }
+  componentDidMount(){
+    console.log("componentDidMount success");
+  }
   handleIncrement = () => {
   
     this.setState((val) => ({
       count : val.count + 1
     }));
   };
+
+  componentDidUpdate(preProps,preState){
+    if(preState.count !== this.state.count){
+      console.log(`${this.state.count} componentDidUpdate success `);
+    }
+  }
+  shouldComponentUpdate(nextprops,state){
+    if(state.count <  -10 || state.count > 10){
+      return false
+    }
+    return true
+  }
   handleDecrement = () => {
     
     this.setState((val) => ({

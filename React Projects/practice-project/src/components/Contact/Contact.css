@@ -45,15 +45,13 @@ hr {
     margin-top: 20px;
     border: 1px solid rgb(206, 206, 206);
 }
-
-.divContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    
-
+.divContainer{
+    width: 100%;
+    /* background-color:red; */
 }
 
-li {
+
+/* li {
     list-style: none;
     background-color: #cccccc23;
     border-radius: 0.2rem;
@@ -73,4 +71,4 @@ li {
     height: 1.7rem;
     margin: 12px 0;
     padding: 15px;
-}
+} */

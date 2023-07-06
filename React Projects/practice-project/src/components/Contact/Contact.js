@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Contact.css'
+import Delete from '../Delete/Delete';
 
 
 export default class Contact extends Component {
@@ -8,7 +9,8 @@ export default class Contact extends Component {
     this.state = {
       names: props.data,
       person: '',
-      numbers:''
+      numbers:'',
+      id:2
     };
   }
 
@@ -22,26 +24,29 @@ export default class Contact extends Component {
   };
 
   handleSubmit = (e) => {
+   
     e.preventDefault();
-    const { person, names , numbers} = this.state;
+    const { person, names , numbers, id} = this.state;
 
     if (person.trim()) {
       this.setState({
-        names: [...names, {user:person,number:numbers}],
+        
+        names: [...names, {id,user:person,number:numbers}],
         person: '',
-        numbers:''
+        numbers:'',
+        id:id + 1
       }); 
     }
+    
   };
-  deleteUser = (e) => {
-    console.log(e.target);
+  deleteUser = (id) => {
+    let filteredUser = this.state.names.filter((ele) => ele.id !== id);
+    this.setState({names:filteredUser});
   }
 
   render() {
     const { names, person, numbers } = this.state;
-   
-    const name = names.map((val, index) => <li key={index}>{val.user}</li>);
-    const number = names.map((val, index) => <li key={index}>{val.number}</li>);
+  
     return (
       <>
        <div className="contactForm">
@@ -59,11 +64,12 @@ export default class Contact extends Component {
         </form>
         <hr />
        <div className='divContainer'>
-       <ul>{name}</ul>
-       <ul>{number}</ul>
-       <ul>
-       <button id='delBtn' onClick={this.deleteUser}>Delete</button>
-       </ul>
+       {
+        names.map((val,index) =>{
+          return <Delete key={index} keyId = {val.id} propsName = {val.user} propsNum = {val.number} funCall = {this.deleteUser}/>
+        })
+       }
+        
        </div>
       </div>
       </>

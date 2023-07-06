@@ -1,0 +1,36 @@
+.list-container{
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+    width: 60%;
+    margin-bottom: 0;
+    padding-left: 0;
+    bottom: 2px solid black;
+}
+.list-container ul{
+    width: 100%;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;                    
+}
+.list-container ul li{
+width: 30%;
+height: 2.4rem;
+background-color: #cccccc23;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #ffff;
+}
+.list-container ul li button{
+    width: 100%;
+    height: 100%;
+    background-color: #FF6A88;
+    padding: 10px;
+    border-radius: 0.2rem;
+    margin: 10px 0;
+    border: none;
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+}

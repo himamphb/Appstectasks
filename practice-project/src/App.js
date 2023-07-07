@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import Btheader from "./components/Bootstrap-Header/Btheader";
-import Contact from "./components/Contact/Contact";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import Counter from "./components/Increment/Counter";
+import SingleComp from "./components/FunctionComponent/SingleComp";
+// import Btheader from "./components/Bootstrap-Header/Btheader";
+// import Contact from "./components/Contact/Contact";
+// import Header from "./components/Header/Header";
+// import Footer from "./components/Footer/Footer";
+// import Counter from "./components/Increment/Counter";
 
 export default class App extends Component {
   render() {
@@ -18,7 +19,8 @@ export default class App extends Component {
           {/* <Footer/> */}
           {/* <Header/> */}
          {/* <Btheader/> */}
-          <Contact data={nameArr} />
+          {/* <Contact data={nameArr} /> */}
+          <SingleComp/>
         </div>
       </>
     );

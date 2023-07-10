@@ -42,10 +42,9 @@ export default class Contact extends Component {
   shouldComponentUpdate(nextProps, nextState) {
     console.log(nextState);
     if (nextState.person.length === 0 || nextState.numbers.length === 0) {
-      
       return false;
     }
-    return true
+    return true;
   }
 
   render() {

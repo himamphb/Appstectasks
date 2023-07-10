@@ -1,0 +1,25 @@
+.container, .mainContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: black;
+  padding-top: 4rem;
+
+  ul {
+    margin-right: 7rem;
+    font-size: 1rem;
+    color: #585858;
+    list-style: none;
+  }
+
+   li {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    
+  }
+   button{
+    margin:0 5px;
+   }
+}

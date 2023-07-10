@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 // import ButtonsTask1 from "./components/ButtonsTask/ButtonsTask1";
 // import ButtonTask2 from "./components/ButtonTask2/ButtonTask2";
-import Api from "./components/API/Api";
+// import Api from "./components/API/Api";
+import ImageApi from "./components/ImageApi/ImageApi";
 // import Todolist from "./components/Todolist/Todolist";
 
 // import SingleComp from "./components/FunctionComponent/SingleComp";
@@ -20,7 +21,8 @@ export default class App extends Component {
     return (
       <>
         <div>
-          <Api/>
+          <ImageApi/>
+          {/* <Api/> */}
           {/* <ButtonsTask1/>
           <ButtonTask2/> */}
           {/* <Todolist/> */}

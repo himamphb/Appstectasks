@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import Todolist from "./components/Todolist/Todolist";
+// import ButtonsTask1 from "./components/ButtonsTask/ButtonsTask1";
+// import ButtonTask2 from "./components/ButtonTask2/ButtonTask2";
+import Api from "./components/API/Api";
+// import Todolist from "./components/Todolist/Todolist";
 
 // import SingleComp from "./components/FunctionComponent/SingleComp";
 // import Btheader from "./components/Bootstrap-Header/Btheader";
@@ -17,7 +20,10 @@ export default class App extends Component {
     return (
       <>
         <div>
-          <Todolist/>
+          <Api/>
+          {/* <ButtonsTask1/>
+          <ButtonTask2/> */}
+          {/* <Todolist/> */}
           {/* <Counter/> */}
           {/* <Footer/> */}
           {/* <Header/> */}

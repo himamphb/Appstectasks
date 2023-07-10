@@ -8,7 +8,7 @@ export default class Todolist extends Component {
       date: "",
       task: "",
       id: 0,
-      isChecked: false,
+
       listFiltered: [],
     };
   }
@@ -23,15 +23,17 @@ export default class Todolist extends Component {
     });
   };
   handleAddTask = () => {
-    const { id } = this.state;
+    const { id, task, date, taskList } = this.state;
     const objTask = {
       id: id,
-      task: this.state.task,
-      date: this.state.date,
+      task: task,
+      date: date,
+      isChecked: false,
     };
-    if (this.state.date !== "" && this.state.task !== "") {
+    if (date !== "" && task !== "") {
       this.setState({
-        taskList: this.state.taskList.concat(objTask),
+        taskList: [...taskList, objTask],
+        listFilterd: [...taskList, objTask],
         task: "",
         date: "",
         id: id + 1,
@@ -43,21 +45,31 @@ export default class Todolist extends Component {
       taskList: [...this.state.taskList].filter((val) => val.id !== index),
     });
   };
-  toggleCheckbox = () => {
-    this.setState((state) => ({ isChecked: !state.isChecked }));
+  toggleCheckbox = (val, id) => {
+    let userId = this.state.taskList.findIndex((item) => item.id === id);
+    let copiedArr = [...this.state.taskList];
+    copiedArr[userId] = { ...copiedArr[userId], isChecked: val };
+    this.setState({ taskList: copiedArr, listFilterd: copiedArr });
   };
   handleDropDown = (value) => {
-    console.log(value);
     if (value === "all") {
       this.setState({
         listFiltered: [...this.state.taskList],
       });
     }
-    if (value === "completed"){
-      this.setState({listFiltered: [...this.state.taskList].filter((val) => val.isChecked === false)});
+    if (value === "completed") {
+      this.setState({
+        listFiltered: this.state.taskList.filter(
+          (val) => val.isChecked === false
+        ),
+      });
     }
-    if (value === "incomplete"){
-      this.setState({ listFiltered: [...this.state.taskList].filter((val) => val.isChecked === true)});
+    if (value === "incomplete") {
+      this.setState({
+        listFiltered: this.state.taskList.filter(
+          (val) => val.isChecked === true
+        ),
+      });
     }
   };
   render() {
@@ -65,11 +77,14 @@ export default class Todolist extends Component {
       return (
         <li key={index}>
           {ele.task}
+
           {ele.date}
           <input
             type="checkbox"
-            defaultChecked={this.state.isChecked}
-            onChange={this.toggleCheckbox}
+            checked={this.state.isChecked}
+            onChange={(e) => {
+              this.toggleCheckbox(e.target.checked, ele.id);
+            }}
           />
           <button
             onClick={() => {
@@ -88,7 +103,9 @@ export default class Todolist extends Component {
           <input
             type="text"
             value={this.state.task}
-            onChange={(e) => {this.handleChange(e.target.value);}}
+            onChange={(e) => {
+              this.handleChange(e.target.value);
+            }}
           />
           <input
             type="date"

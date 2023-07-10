@@ -7,6 +7,7 @@ export default class ImageApi extends Component {
       <div className='main-container'>
         <div className='child-container'>
         <input type="text"  onChange={(e) => this.handleChange(e.target.value)}/>
+        <div>hi</div>
         </div>
       </div>
    

@@ -2,9 +2,9 @@ import React, { Component } from "react";
 // import ButtonsTask1 from "./components/ButtonsTask/ButtonsTask1";
 // import ButtonTask2 from "./components/ButtonTask2/ButtonTask2";
 // import Api from "./components/API/Api";
-import ImageApi from "./components/ImageApi/ImageApi";
+// import ImageApi from "./components/ImageApi/ImageApi";
+import Todos from "./components/TodosTask/Todos";
 // import Todolist from "./components/Todolist/Todolist";
-
 // import SingleComp from "./components/FunctionComponent/SingleComp";
 // import Btheader from "./components/Bootstrap-Header/Btheader";
 // import Contact from "./components/Contact/Contact";
@@ -21,7 +21,8 @@ export default class App extends Component {
     return (
       <>
         <div>
-          <ImageApi/>
+          <Todos/>
+          {/* <ImageApi/> */}
           {/* <Api/> */}
           {/* <ButtonsTask1/>
           <ButtonTask2/> */}

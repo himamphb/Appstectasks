@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Image from '../Image/Image';
+import "../Image/Image.scss";
 
 export default class ImageApi extends Component {
 constructor(props) {
@@ -18,36 +19,33 @@ constructor(props) {
     getData = async () => {
     const apiKey = "21c52fdd78d8bda4bcb6af63df51d6a6";
    
-    try {
-      
       let response = await fetch(
         `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${this.state.query}&per_page=10&format=json&nojsoncallback=1`
       );
       let responseData = await response.json();
-      let url = responseData.photos.photo.map((image) => {
-        const url = {
+      let link = responseData.photos.photo.map((image) => {
+        const link = {
           id: image.id,
-          url: `https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}.jpg`
+          link: `https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}.jpg`
         };
-        return url;
+        return link;
       });
-      this.setState({ imageArray: url ,query:""});
-    } catch (err) {
-      console.log(err);
-    }
+      this.setState({ imageArray: link ,query:""});
+    
   };
  
   render() {
-     let imageData = this.state.imageArray.map((photo) => {
-      return <Image key={photo.id} link={photo.url} />;
+    const {query,imageArray} = this.state;
+     let imageData = imageArray.map((photo) => {
+      return <Image key={photo.id} link={photo.link} inpVal = {query}/>;
     });
     return (
       <div className='main-container'>
         <div className='child-container'>
-        <input type="text" value={this.state.query} onChange={this.handleChange}/>
-        <button onClick={this.getData}>generate image</button>
+        <input type="search" value={query} onChange={this.handleChange}/>
+        <button onClick={this.getData}>Generate Image</button>
         </div>
-        <div className='image'>{imageData}</div>
+        <div className='imageDiv'>{imageData}</div>
         
       </div>
    

@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+$font-all: Poppins;
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(
+    90deg,
+    rgba(184, 111, 111, 0),
+    rgb(117, 92, 92)
+  );
+}
+
+.container {
+  border-radius: 8px;
+  height: 40vh;
+  width: 35%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    font-family: $font-all;
+    margin: 0;
+  }
+  form {
+    display: flex;
+    height: 100%;
+    width: 60%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  input {
+    height: 23%;
+    width: 100%;
+    border: none;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    background-color: rgb(187, 193, 204);
+    border-radius: 7px;
+    outline: none;
+    font-family: $font-all;
+    color: rgb(15, 15, 15);
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    border-radius: 7px;
+    background-color: rgb(140, 151, 149);
+    width: 100%;
+    height: 25%;
+    font-family: $font-all;
+  }
+  button:hover {
+    background-color: rgb(50, 129, 76);
+    color: #fff;
+  }
+  input:focus {
+    background-color: burlywood;
+  }
+}
+// .todos-content{
+ 
+//   border-radius: 8px;
+//   background-color: rgb(140, 151, 149);
+//   margin: 1rem auto;
+//   height: 45px;
+//   width: 40%;
+//   font-family: $font-all;
+//  ul{
+//   height: 100%;
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+//  }
+//  li{
+//   list-style-type: none;
+//  }
+//  button{
+//   cursor: pointer;
+//   border:none;
+//   padding: 12px;
+//   background-color: rgb(50, 129, 76);
+//   border-radius: 5px;
+//  }
+// }

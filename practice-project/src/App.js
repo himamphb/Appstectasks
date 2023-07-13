@@ -1,5 +1,13 @@
 import React, { Component } from "react";
-import Number from "./components/NumberGen/Number";
+import {BrowserRouter, Route, Routes} from "react-router-dom"
+import Navbar from "./components/Navigation/Navbar";
+import About from "./components/Navigation/About";
+import Home from "./components/Navigation/Home";
+import Gallery from "./components/Navigation/Gallery";
+import Contact from "./components/Navigation/Contact";
+// import PackageLib from "./components/NpmPackagesLibraries/PackageLib";
+// import Navbar from "./components/Navigation/Navbar";
+// import Number from "./components/NumberGen/Number";
 // import Array from "./components/Array/Array";
 // import ButtonsTask1 from "./components/ButtonsTask/ButtonsTask1";
 // import ButtonTask2 from "./components/ButtonTask2/ButtonTask2";
@@ -17,28 +25,24 @@ import Number from "./components/NumberGen/Number";
 export default class App extends Component {
   render() {
     return (
-      <>
-        <div>
-          <Number/>
-          {/* <Array/> */}
-          {/* <Todos/> */}
-          {/* <ImageApi/> */}
-          {/* <Api/> */}
-          {/* <ButtonsTask1/>
-          <ButtonTask2/> */}
-          {/* <Todolist/> */}
-          {/* <Counter/> */}
-          {/* <Footer/> */}
-          {/* <Header/> */}
-         {/* <Btheader/> */}
-          {/* <Contact data={nameArr} /> */}
-          {/* <SingleComp/> */}
-        
-        </div>
-      </>
+      
+    <BrowserRouter>
+      <Navbar/>
+      <Routes>
+        <Route path="/" Component={Home}/>
+        <Route path="/about" Component={About}/>
+        <Route path="/gallery" Component={Gallery}/>
+        <Route path="/contact" Component={Contact}/>
+      </Routes>
+    </BrowserRouter>
+    
     );
   }
 }
+
+
+
+    
 // const nameArr = [
     //   { id:1,user: "Mark Zuckerberg", number: 9951941987 },
       

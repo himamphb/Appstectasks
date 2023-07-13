@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Number.scss";
 
+
 export default class Number extends Component {
   constructor() {
     super();
@@ -12,7 +13,9 @@ export default class Number extends Component {
       userNumber: "",
       isAvalibity: false,
       isCLicked: false,
-      showCheckBtn : false
+      showCheckBtn : false,
+      value : "",
+      date : ""
     };
   }
 
@@ -40,9 +43,21 @@ export default class Number extends Component {
     this.setState({isCLicked : false,showCheckBtn : false})
   }
 
-  render() {
-    const { userNumber, showCheckBtn, isCLicked, isAvalibity } = this.state;
+  setPhoneNumber = (val) => {
+    this.setState({
+      value : val
+    })
+  }
 
+setStartDate = (val) => {
+  this.setState({
+    date : val
+  })
+}
+
+  render() {
+    const { userNumber, showCheckBtn, isCLicked, isAvalibity,value, date } = this.state;
+    
     return (
       <>
         <div className="container">
@@ -54,6 +69,10 @@ export default class Number extends Component {
         <div className="child-container">
           {showCheckBtn ? (<div><button onClick={this.checkNumber}>check avalability of number</button></div>) : null}
           {isCLicked ? (isAvalibity ? (<h3> {userNumber} is valid</h3>) : (<h3>{userNumber} is already registered</h3>)) : null}
+        </div>
+        <div>
+          
+          <h3>{value}</h3>
         </div>
       </>
     );

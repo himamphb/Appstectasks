@@ -1,0 +1,14 @@
+.image-container {
+  border: 1px solid red;
+  height: 28rem;
+  width: 100%;
+  .slider-component {
+    height: 100%;
+    width: 100%;
+    img {
+      height: 100%;
+      width: 50%;
+      object-fit: cover;
+    }
+  }
+}

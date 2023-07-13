@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import {BrowserRouter, Route, Routes} from "react-router-dom"
+
 import Navbar from "./components/Navigation/Navbar";
 import About from "./components/Navigation/About";
 import Home from "./components/Navigation/Home";
 import Gallery from "./components/Navigation/Gallery";
 import Contact from "./components/Navigation/Contact";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 // import PackageLib from "./components/NpmPackagesLibraries/PackageLib";
 // import Navbar from "./components/Navigation/Navbar";
 // import Number from "./components/NumberGen/Number";

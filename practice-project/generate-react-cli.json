@@ -2,7 +2,7 @@
   "usesTypeScript": false,
   "usesStyledComponents": false,
   "usesCssModule": false,
-  "cssPreprocessor": "css",
+  "cssPreprocessor": "scss",
   "testLibrary": "None",
   "component": {
     "default": {
@@ -11,6 +11,14 @@
       "withTest": false,
       "withStory": false,
       "withLazy": false
+    },
+    "page": {
+      "path": "src/pages",
+      "withStyle": true,
+      "withTest": false,
+      "withStory": false,
+      "withLazy": false
     }
   }
+
 }

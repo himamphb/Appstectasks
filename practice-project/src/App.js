@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
 import Navbar from "./components/Navigation/Navbar";
-import About from "./components/Navigation/About";
-import Home from "./components/Navigation/Home";
-import Gallery from "./components/Navigation/Gallery";
-import Contact from "./components/Navigation/Contact";
+import About from "./pages/About/About";
+import Home from "./pages/Home/Home";
+import Gallery from "./pages/Gallery/Gallery";
+import Contact from "./pages/Contact/Contact";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // import PackageLib from "./components/NpmPackagesLibraries/PackageLib";

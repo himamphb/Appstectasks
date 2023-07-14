@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ImageApi from "../ImageApi/ImageApi"
+import ImageApi from "../../components/ImageApi/ImageApi"
 export default class Gallery extends Component {
   render() {
     return (

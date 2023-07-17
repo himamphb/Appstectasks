@@ -1,11 +1,15 @@
 import React, { Component } from "react";
+// import Clicked from "./components/Hoc/Clicked";
+import CardApi from "./components/CardBootstrap/CardApi";
 
-import Navbar from "./components/Navigation/Navbar";
-import About from "./pages/About/About";
-import Home from "./pages/Home/Home";
-import Gallery from "./pages/Gallery/Gallery";
-import Contact from "./pages/Contact/Contact";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+
+// import Navbar from "./components/Navigation/Navbar";
+// import About from "./pages/About/About";
+// import Home from "./pages/Home/Home";
+// import Gallery from "./pages/Gallery/Gallery";
+// import Contact from "./pages/Contact/Contact";
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // import PackageLib from "./components/NpmPackagesLibraries/PackageLib";
 // import Navbar from "./components/Navigation/Navbar";
@@ -26,17 +30,23 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 export default class App extends Component {
   render() {
+    
     return (
+      <div> 
       
-    <BrowserRouter>
-      <Navbar/>
-      <Routes>
-        <Route path="/" Component={Home}/>
-        <Route path="/about" Component={About}/>
-        <Route path="/gallery" Component={Gallery}/>
-        <Route path="/contact" Component={Contact}/>
-      </Routes>
-    </BrowserRouter>
+        <CardApi/>
+        {/* <Clicked propName = "himam"/> */}
+      </div>
+      
+    // <BrowserRouter>
+    //   <Navbar/>
+    //   <Routes>
+    //     <Route path="/" Component={Home}/>
+    //     <Route path="/about" Component={About}/>
+    //     <Route path="/gallery" Component={Gallery}/>
+    //     <Route path="/contact" Component={Contact}/>
+    //   </Routes>
+    // </BrowserRouter>
     
     );
   }

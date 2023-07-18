@@ -1,8 +1,14 @@
 import React, { Component } from "react";
-// import Clicked from "./components/Hoc/Clicked";
-import CardApi from "./components/CardBootstrap/CardApi";
-
-
+import {
+  CheckBoxWrapper,
+  DdOptionWrapper,
+  DdSelectWrapper,
+  DivWrapper,
+  FormWrapper,
+  StyledButton,
+  StyledLabel,
+  TextArea,
+} from "./components/Styled/Form.styled";
 
 // import Navbar from "./components/Navigation/Navbar";
 // import About from "./pages/About/About";
@@ -30,32 +36,61 @@ import CardApi from "./components/CardBootstrap/CardApi";
 
 export default class App extends Component {
   render() {
-    
     return (
-      <div> 
-      
-        <CardApi/>
-        {/* <Clicked propName = "himam"/> */}
-      </div>
-      
-    // <BrowserRouter>
-    //   <Navbar/>
-    //   <Routes>
-    //     <Route path="/" Component={Home}/>
-    //     <Route path="/about" Component={About}/>
-    //     <Route path="/gallery" Component={Gallery}/>
-    //     <Route path="/contact" Component={Contact}/>
-    //   </Routes>
-    // </BrowserRouter>
-    
+      <DivWrapper>
+        <FormWrapper type="text" placeholder="enter the text" />
+        <FormWrapper type="email" placeholder="enter the email" />
+        <FormWrapper type="password" placeholder="enter the password" />
+        <FormWrapper type="number" placeholder="enter the number" />
+        <FormWrapper type="date"></FormWrapper>
+        <CheckBoxWrapper>
+          <FormWrapper type="checkbox" />
+          <StyledLabel>HTML</StyledLabel>
+          <FormWrapper type="checkbox" />
+          <StyledLabel>CSS</StyledLabel>
+          <FormWrapper type="checkbox" />
+          <StyledLabel>JS</StyledLabel>
+        </CheckBoxWrapper>
+
+        <CheckBoxWrapper>
+          <FormWrapper type="radio" />
+          <StyledLabel>React</StyledLabel>
+          <FormWrapper type="radio" />
+          <StyledLabel>Angular</StyledLabel>
+          <FormWrapper type="radio" />
+          <StyledLabel>Vue</StyledLabel>
+        </CheckBoxWrapper>
+
+        <CheckBoxWrapper>
+          <StyledLabel>Experience</StyledLabel>
+          <DdSelectWrapper>
+            <DdOptionWrapper>0</DdOptionWrapper>
+            <DdOptionWrapper>1</DdOptionWrapper>
+            <DdOptionWrapper>2</DdOptionWrapper>
+            <DdOptionWrapper>3</DdOptionWrapper>
+            <DdOptionWrapper>4</DdOptionWrapper>
+            <DdOptionWrapper>5</DdOptionWrapper>
+          </DdSelectWrapper>
+        </CheckBoxWrapper>
+
+        <TextArea  rows="4" cols="50">Enter the text...🙂</TextArea>
+        <StyledButton>Submit</StyledButton>
+      </DivWrapper>
+
+      // <BrowserRouter>
+      //   <Navbar/>
+      //   <Routes>
+      //     <Route path="/" Component={Home}/>
+      //     <Route path="/about" Component={About}/>
+      //     <Route path="/gallery" Component={Gallery}/>
+      //     <Route path="/contact" Component={Contact}/>
+      //   </Routes>
+      // </BrowserRouter>
     );
   }
 }
 
-
-
-    
 // const nameArr = [
-    //   { id:1,user: "Mark Zuckerberg", number: 9951941987 },
-      
-    // ];
+//   { id:1,user: "Mark Zuckerberg", number: 9951941987 },
+
+// ];

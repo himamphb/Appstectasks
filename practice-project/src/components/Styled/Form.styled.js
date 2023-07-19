@@ -4,7 +4,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 body{
     font-family: 'Poppins';
-    
+    background-color: rgb(161, 226, 226);
 }
 `;
 
@@ -17,9 +17,7 @@ const DivWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(0, 200, 200);
-  font-family: Poppins;
-  
+  background-color: rgb(0, 200, 200)  
 `;
 
 const FormWrapper = styled.input`

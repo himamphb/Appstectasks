@@ -1,16 +1,17 @@
 import React, { Component } from "react";
-import {
-  CheckBoxWrapper,
-  DdOptionWrapper,
-  DdSelectWrapper,
-  DivWrapper,
-  FormWrapper,
-  GlobalStyle,
-  StyledButton,
-  StyledLabel,
-  TextArea,
-} from "./components/Styled/Form.styled";
-import FaqPage from "./components/FaqPageTask/FaqPage";
+import Material from "./components/Material-UI/Material";
+// import {
+//   CheckBoxWrapper,
+//   DdOptionWrapper,
+//   DdSelectWrapper,
+//   DivWrapper,
+//   FormWrapper,
+//   GlobalStyle,
+//   StyledButton,
+//   StyledLabel,
+//   TextArea,
+// } from "./components/Styled/Form.styled";
+// import FaqPage from "./components/FaqPageTask/FaqPage";
 
 // import Navbar from "./components/Navigation/Navbar";
 // import About from "./pages/About/About";
@@ -50,7 +51,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <FaqPage />
+        <Material/>
       </div>
       // <DivWrapper>
       //   <GlobalStyle/>

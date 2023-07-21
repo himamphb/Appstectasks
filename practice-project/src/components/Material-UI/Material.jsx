@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Material.scss";
-import Typography from "@material-ui/core/Typography";
+// import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import HomeIcon from "@material-ui/icons/Home";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
@@ -9,7 +9,7 @@ import DateRangeIcon from "@material-ui/icons/DateRange";
 import Grid from "@material-ui/core/Grid";
 import HocStyles from "./FormRow";
 import { withStyles } from "@material-ui/styles";
-
+import SearchIcon from '@mui/icons-material/Search';
 const MaterialStyle = ((theme) => {
 
 })
@@ -22,19 +22,15 @@ class Material extends Component {
         <div className="header-container">
           <div>
             <Container maxWidth="sm">
-              <Typography variant="h6" style={{ color: "#e8e9eb" }}>
-                Hello,
-              </Typography>
-              <Typography variant="h5" style={{ color: "#eceef0" }}>
-                Himam Basha
-              </Typography>
+              <p style={{ color: "#e8e9eb" }}>Hello,</p>
+              <h3 style={{ color: "#e8e9eb" }}>Himam Basha</h3>
             </Container>
           </div>
           <div className="imageDiv">
             <img
               src="images.jpg"
               alt=""
-              style={{ width: "80px", height: "80px", borderRadius: "50%" }}
+              style={{ width: "70px", height: "60px", borderRadius: "50%" }}
             />
           </div>
         </div>
@@ -47,6 +43,7 @@ class Material extends Component {
           </p>
         </div>
         <div className="search-container">
+          <SearchIcon/>
           <input type="text" placeholder="Type to search...." />
         </div>
         <div className="content-container">
@@ -68,16 +65,16 @@ class Material extends Component {
         </div>
         <div className="navigate-container">
           <div>
-            <HomeIcon />
+            <HomeIcon style={{ fontSize: "36px"}}/>
           </div>
           <div>
-            <LocationOnIcon />
+            <LocationOnIcon style={{ fontSize: "36px"}}/>
           </div>
           <div>
-            <SignalCellularAltIcon />
+            <SignalCellularAltIcon style={{ fontSize: "36px"}}/>
           </div>
           <div>
-            <DateRangeIcon />
+            <DateRangeIcon style={{ fontSize: "36px"}}/>
           </div>
         </div>
       </div>

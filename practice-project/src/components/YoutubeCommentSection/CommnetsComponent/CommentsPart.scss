@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+.comments-container {
+  margin-top: 2rem;
+  margin-left: 7rem;
+  // border: 1px solid red;
+  width: 60%;
+  color: #fff;
+}
+.sortSection {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  .sortDiv {
+    margin-left: 1rem;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+  }
+}
+.addComment {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  width: 100%;
+  .imageDiv {
+    width: 10%;
+  }
+  img {
+    width: 50px;
+    height: 40px;
+    border-radius: 80%;
+  }
+  .inputDiv {
+    width: 90%;
+  }
+  input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    padding: 6px;
+    outline: none;
+    color: #fff;
+  }
+}
+.commentsLists {
+    .commentContent{
+      display: flex;
+      align-items: center;
+      font-family: Roboto;
+      img {
+        width: 50px;
+        height: 40px;
+        border-radius: 80%;
+        
+      }
+      .ListContentwithLike{
+        margin-left: 1.8rem;
+        padding: 6px;
+      }
+    }
+  
+
+}

@@ -121,6 +121,7 @@ class HeaderSection extends Component {
       keepMounted
       transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       open={isMobileMenuOpen}
+      style={{color:"#fff"}}
       
     >
       <MenuItem>
@@ -167,7 +168,7 @@ class HeaderSection extends Component {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            YouTube
+            MiniTube
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -183,7 +184,7 @@ class HeaderSection extends Component {
             />
           </div>
           <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
+          {/* <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="secondary">
                 <MailIcon />
@@ -215,7 +216,7 @@ class HeaderSection extends Component {
             >
               <MoreIcon />
             </IconButton>
-          </div>
+          </div> */}
         </Toolbar>
       </AppBar>
       {renderMobileMenu}

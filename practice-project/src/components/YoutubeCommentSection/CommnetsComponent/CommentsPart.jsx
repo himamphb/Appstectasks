@@ -82,7 +82,7 @@ export default class CommentsPart extends Component {
               value={this.state.comment}
             />
           </div>
-          <Button variant="contained" onClick={this.addComments} color="error">Add</Button>
+          {/* <Button variant="contained" onClick={this.addComments} color="error">Add</Button> */}
           <button onClick={this.addComments}>Add comment</button>
         </div>
         <div className="commentsLists">

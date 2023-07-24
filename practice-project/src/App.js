@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import CommentSection from "./components/YoutubeCommentSection/CommentSection";
+import CommentsPart from "./components/YoutubeCommentSection/CommnetsComponent/CommentsPart";
+import HeaderSection from "./components/YoutubeCommentSection/HeaderSection";
+import VideoSection from './components/YoutubeCommentSection/VideoSection'
 // import Material from "./components/Material-UI/Material";
 // import {
 //   CheckBoxWrapper,
@@ -52,7 +54,9 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <CommentSection/>
+        <HeaderSection/>
+      <VideoSection/>
+      <CommentsPart/>
         {/* <Material/> */}
       </div>
       // <DivWrapper>

@@ -2,9 +2,17 @@
 .comments-container {
   margin-top: 2rem;
   margin-left: 7rem;
-  // border: 1px solid red;
   width: 60%;
   color: #fff;
+  button{
+    cursor: pointer;
+    color: #0c0b0b;
+    width:10%;
+     background-color: #b63131;
+      border:none;
+      border-radius: 8px;
+      padding: 4px;
+  }
 }
 .sortSection {
   display: flex;
@@ -24,11 +32,7 @@
   width: 100%;
   .imageDiv {
     width: 10%;
-  }
-  img {
-    width: 50px;
-    height: 40px;
-    border-radius: 80%;
+    margin-bottom: 1rem;
   }
   .inputDiv {
     width: 90%;
@@ -37,28 +41,22 @@
     border-top: none;
     border-left: none;
     border-right: none;
-    width: 100%;
-    padding: 6px;
+    width: 90%;
+    padding: 4px;
     outline: none;
     color: #fff;
   }
 }
 .commentsLists {
     .commentContent{
+
       display: flex;
       align-items: center;
       font-family: Roboto;
-      img {
-        width: 50px;
-        height: 40px;
-        border-radius: 80%;
-        
-      }
       .ListContentwithLike{
-        margin-left: 1.8rem;
-        padding: 6px;
+        padding: 0.8rem;
       }
     }
-  
+ 
 
 }

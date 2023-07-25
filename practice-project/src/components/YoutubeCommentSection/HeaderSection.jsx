@@ -12,6 +12,7 @@ import SearchIcon from "@material-ui/icons/Search";
 const styles = (theme) => ({
   grow: {
     flexGrow: 1,
+    backgroundColor: '#000'
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -117,8 +118,8 @@ class HeaderSection extends Component {
 
     return (
       <div className={classes.grow}>
-        <AppBar position="static">
-          <Toolbar>
+        <AppBar position="static" >
+          <Toolbar sx={{ backgroundColor: '#000' }}>
             <IconButton
               edge="start"
               className={classes.menuButton}

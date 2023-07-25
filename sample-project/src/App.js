@@ -1,11 +1,16 @@
 
 import './App.css';
+import FormikLibrary from './Components/ReactForms/FormikLibrary';
 
-function App() {
-  return (
-    <div className="App">
-    </div>
-  );
+import React, { Component } from 'react'
+
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+        <FormikLibrary/>
+      </div>
+    )
+  }
 }
 
-export default App;

@@ -32,19 +32,21 @@
   width: 100%;
   .imageDiv {
     width: 10%;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
   .inputDiv {
-    width: 90%;
+    width: 100%;
+    
   }
   input {
+    background: transparent;
     border-top: none;
     border-left: none;
     border-right: none;
     width: 90%;
     padding: 4px;
     outline: none;
-    color: #fff;
+    color: #ebe0e0;
   }
 }
 .commentsLists {
@@ -54,9 +56,16 @@
       align-items: center;
       font-family: Roboto;
       .ListContentwithLike{
-        padding: 0.8rem;
+        margin-left: 1.2rem;
+        .pointerIcon{
+          cursor: pointer;
+        }
+        #pElement{
+          
+          cursor: pointer;
+        }
+        
       }
     }
  
-
 }

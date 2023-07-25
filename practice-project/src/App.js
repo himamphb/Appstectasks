@@ -54,10 +54,11 @@ export default class App extends Component {
   render() {
     return (
       <div>
+        
         <HeaderSection/>
       <VideoSection/>
-      <CommentsPart/>
-        {/* <Material/> */}
+      <CommentsPart/> 
+        {/* {/* <Material/> */}
       </div>
       // <DivWrapper>
       //   <GlobalStyle/>

@@ -1,0 +1,29 @@
+.replyInput {
+  width: 700px;
+    input{
+      width: 100%;
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 90%;
+    padding: 4px;
+    outline: none;
+    color: #ebe0e0;
+  }
+  
+
+}
+.replyDrop-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 700px;
+  .replyDrop-buttons{
+    width: 20%;
+   margin-right: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

@@ -3,36 +3,36 @@ import "./CommentsPart.scss";
 import SortIcon from "@material-ui/icons/Sort";
 import CommentsLists from "./CommentsLists";
 import Avatar from "@material-ui/core/Avatar";
-import Button from "@material-ui/core/Button";
+// import Button from "@material-ui/core/Button";
 
 export default class CommentsPart extends Component {
   constructor() {
     super();
     this.state = {
       listArray: [
-        {
-          user: "@rajshekar",
-          src: "person2.jpg",
-          comment: "It will be good movie ,waiting to watch in theater",
-        },
-        {
-          user: "@nirushetty",
-          src: "person3.jpg",
-          comment: "waiting for the movie...😍",
-        },
-        {
-          user: "@praveenkr12",
-          src: "person4.jpg",
-          comment: "Nolan movies are the best",
-        },
-        {
-          user: "@vinaykumar99",
-          src: "person5.jpg",
-          comment: "Nolan fans assemble here....✌️",
-        },
+      //   {
+      //     user: "@rajshekar",
+      //     src: "person2.jpg",
+      //     comment: "It will be good movie ,waiting to watch in theater",
+      //   },
+      //   {
+      //     user: "@nirushetty",
+      //     src: "person3.jpg",
+      //     comment: "waiting for the movie...😍",
+      //   },
+      //   {
+      //     user: "@praveenkr12",
+      //     src: "person4.jpg",
+      //     comment: "Nolan movies are the best",
+      //   },
+      //   {
+      //     user: "@vinaykumar99",
+      //     src: "person5.jpg",
+      //     comment: "Nolan fans assemble here....✌️",
+      //   },
       ],
       comment: "",
-      count: 5,
+      count: 0,
     };
   }
   handleChange = (e) => {
@@ -42,14 +42,14 @@ export default class CommentsPart extends Component {
   };
   addComments = () => {
     if (this.state.comment !== "") {
-      console.log("if");
+      // console.log("if");
       const obj = {
         user: "@himamphb124",
         src: "person1.jpg",
         comment: this.state.comment,
       };
       const newArray = [obj, ...this.state.listArray];
-      console.log(newArray);
+      // console.log(newArray);
       this.setState({
         listArray: newArray,
         count: this.state.count + 1,
@@ -86,7 +86,7 @@ export default class CommentsPart extends Component {
           <button onClick={this.addComments}>Add comment</button>
         </div>
         <div className="commentsLists">
-          {this.state.listArray.map((element) => {
+          { this.state.listArray && this.state.listArray.map((element) => {
             return (
               <CommentsLists
                 src={element.src}

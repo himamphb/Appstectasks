@@ -51,7 +51,7 @@
 }
 .commentsLists {
     .commentContent{
-
+      position: relative;
       display: flex;
       align-items: center;
       font-family: Roboto;
@@ -64,7 +64,12 @@
           
           cursor: pointer;
         }
-        
+        .menu-display{
+          position: absolute;
+          right: 5rem;
+          top: 3rem;
+         
+        }
       }
     }
  

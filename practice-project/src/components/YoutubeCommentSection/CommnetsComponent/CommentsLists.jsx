@@ -3,9 +3,10 @@ import ThumbUpAltOutlinedIcon from "@material-ui/icons/ThumbUpAltOutlined";
 import ThumbDownAltOutlinedIcon from "@material-ui/icons/ThumbDownAltOutlined";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
-// import { withStyles } from '@material-ui/core/styles';
 import Avatar from "@material-ui/core/Avatar";
 import ReplySection from "./ReplySection";
+import MenuDisplay from "./MenuDisplay";
+import './CommentsPart.scss'
 
 
 export default class extends Component {
@@ -16,7 +17,8 @@ export default class extends Component {
       likeClick: false,
       disLikeClick: false,
       likeCount: 0,
-      replyDiv : false
+      replyDiv : false,
+      mouse_over : false
     };
   }
   handleToggleLikeUp = (e) => {
@@ -57,14 +59,22 @@ export default class extends Component {
   handleReply = () => {
     this.setState({replyDiv : true})
   }
+
+  displayMenu = () => {
+    this.setState({mouse_over : true})
+  }
+  closeMenu = () => {
+    this.setState({mouse_over : false})
+  }
   render() {
-    const { likeClick, disLikeClick, likeCount, replyDiv } = this.state;
+    const { likeClick, disLikeClick, likeCount, replyDiv, mouse_over } = this.state;
     return (
-      <div className="commentContent">
+      <div className="commentContent" >
         <Avatar src={this.props.src} />
-        <div className="ListContentwithLike">
+        <div className="ListContentwithLike" onMouseOver={this.displayMenu} onMouseLeave={this.closeMenu}>
           <p>{this.props.user}</p>
           <p>{this.props.comment}</p>
+          {mouse_over ? <div className="menu-display"><MenuDisplay/></div> : null}
           <div className="inlineElements">
             {likeClick ?
               <ThumbUpAltIcon className="pointerIcon" id="decrease" onClick={(e) => {this.handleToggleLikeUp(e)}}/>

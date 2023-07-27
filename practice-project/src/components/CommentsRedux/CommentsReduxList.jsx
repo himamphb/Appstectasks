@@ -9,7 +9,6 @@ class CommentsReduxList extends Component {
 
     this.state = {
       reply: false,
-      childReply: false,
       replyChildData: "",
     };
   }
@@ -24,11 +23,7 @@ class CommentsReduxList extends Component {
   handleDelete = (id) => {
     this.props.deleteParentComment(id);
   };
-  replychild = () => {
-    this.setState({
-      childReply: true,
-    });
-  };
+
 
   render() {
     return (
@@ -54,7 +49,6 @@ class CommentsReduxList extends Component {
               <li key={obj.id}>
                 <div>
                   <p>{obj.comment}</p>
-                  <button onClick={this.replychild}>Reply</button>
                   <button
                     onClick={() => {
                       this.handleDeleteChild(obj.id);
@@ -64,25 +58,8 @@ class CommentsReduxList extends Component {
                   </button>
                 </div>
 
-                {this.state.childReply ? <ReplyComponent /> : null}
                 
-                <ul>
-                  {this.props.nestesChildArray.map((obj) => (
-                    <li key={obj.id}>
-                      <div>
-                        <p>{obj.comment}</p>
-                        <button onClick={this.replychild}>Reply</button>
-                        <button
-                          onClick={() => {
-                            this.handleDeleteChild(obj.id);
-                          }}
-                        >
-                          Delete
-                        </button>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
+                
               </li>
             ))}
           </ul>

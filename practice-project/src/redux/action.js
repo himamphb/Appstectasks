@@ -22,3 +22,4 @@ export const deleteParentComment = (id) => ({
     type :DELETE_PARENT_COMMENT,
     payload : id
 })
+

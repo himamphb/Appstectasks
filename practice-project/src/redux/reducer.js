@@ -3,7 +3,7 @@ import { ADD_COMMENT,DELETE_COMMENT, REPLY_COMMENT, DELETE_PARENT_COMMENT } from
 const initialState = {
     comments : [],
     childCommentsArray : [],
-    nestedChildArray  :[]
+    
 }
  const reducer = (state = initialState , action) => {
     switch(action.type) {

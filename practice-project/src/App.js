@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import CommentsPart from "./components/YoutubeCommentSection/CommnetsComponent/CommentsPart";
-import HeaderSection from "./components/YoutubeCommentSection/HeaderSection";
-import VideoSection from './components/YoutubeCommentSection/VideoSection'
+import CommentsRedux from "./components/CommentsRedux/CommentsRedux";
+import { Provider } from "react-redux"
+import { store } from "./redux/store";
+import CommentsReduxList from "./components/CommentsRedux/CommentsReduxList";
+
 // import Material from "./components/Material-UI/Material";
 // import {
 //   CheckBoxWrapper,
@@ -40,26 +42,17 @@ import VideoSection from './components/YoutubeCommentSection/VideoSection'
 // import Footer from "./components/Footer/Footer";
 // import Counter from "./components/Increment/Counter";
 
-// const lightTheme = {
-//   body: '#f1f1f1',
-//   text: '#121620'
-// };
-
-// const darkTheme = {
-//   body: '#121620',
-//   text: '#f1f1f1'
-// };
 
 export default class App extends Component {
   render() {
     return (
-      <div>
-        
-        <HeaderSection/>
-      <VideoSection/>
-      <CommentsPart/> 
-        {/* {/* <Material/> */}
-      </div>
+      
+       <Provider store = {store}>
+       <CommentsRedux/>
+       <CommentsReduxList/>
+       </Provider>
+     
+    
       // <DivWrapper>
       //   <GlobalStyle/>
       //   <FormWrapper type="text" placeholder="enter the text" />
@@ -104,10 +97,6 @@ export default class App extends Component {
   }
 }
 
-// const nameArr = [
-//   { id:1,user: "Mark Zuckerberg", number: 9951941987 },
-
-// ];
 
 // <BrowserRouter>
 //   <Navbar/>

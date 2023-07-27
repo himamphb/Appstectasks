@@ -119,7 +119,7 @@ class HeaderSection extends Component {
     return (
       <div className={classes.grow}>
         <AppBar position="static" >
-          <Toolbar sx={{ backgroundColor: '#000' }}>
+          <Toolbar lg={{ backgroundColor: '#000' }}>
             <IconButton
               edge="start"
               className={classes.menuButton}

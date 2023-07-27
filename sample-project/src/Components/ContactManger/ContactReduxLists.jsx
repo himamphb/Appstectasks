@@ -11,7 +11,7 @@ class ContactReduxLists extends Component {
       <div className="parent">
         <ul>
           {this.props.contact.map((ele) => (
-            <li key={ele.id} className="list">
+            <li key={ele.id}>
               <div className="divContainer">
                 <p>{ele.userName}</p>
                 <p>{ele.userEmail}</p>

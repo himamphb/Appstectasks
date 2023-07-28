@@ -12,13 +12,16 @@ const selectEmail = createSelector(
     (contactsFromState) => contactsFromState
   );
 
-
 const nameCount = createSelector(
     [selectContact],
-    (user) => user.length                               
+    (users) => {
+      return users.filter((ele) => ele !== "").length
+    }                              
 )
 const emailCount = createSelector(
     [selectEmail],
-    (users) => users.length
+    (users) => {
+      return users.filter((ele) => ele !== "").length
+    }
 )
 export {nameCount, emailCount, selectContact, selectEmail}

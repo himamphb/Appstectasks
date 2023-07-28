@@ -14,39 +14,28 @@ class ContactReduxLists extends Component {
     this.props.deleteContact(id);
   };
   render() {
-    // console.log(this.props.contact);
+    console.log(this.props);
     return (
       <div className="parent">
-        <ul>
-          {this.props.contact.map((ele) => (
-            <li key={ele.id}>
-              <span>nameCount : {this.props.nameLength}</span>
-
-              <div className="divContainer">
-                <p>{ele.userName}</p>
-
-                <button
-                  type="button"
-                  onClick={() => {
-                    this.handleDelete(ele.id);
-                  }}
-                >
-                  Delete
-                </button>
-              </div>
+        <ul style={{display:"flex",width:"500px"}}>
+          <div style={{width:"50%"}}>
+          {this.props.contact.map((ele, index) => (
+            <li key={index} style={{border:"1px solid #fff",height:"2.5rem",width:"100%"}}>
+              <p>{ele}</p>
             </li>
           ))}
-          {this.props.email.map((ele) => (
-            
-              <li key={ele.id}>
-                <span>emailCount : {this.props.emailLength}</span>
-                <div>
-                <p>{ele.userEmail}</p>
-                </div>
-              </li>
-            
+          </div>
+          <div style={{width:"50%"}}>
+          {this.props.email.map((ele, index) => (
+            <li key={index} style={{border:"1px solid #fff",height:"2.5rem",width:"100%"}}>
+              <p>{ele}</p>
+            </li>
           ))}
+          </div>
+          
         </ul>
+        <span>nameCount : {this.props.nameLength}</span>
+          <span>emailCount : {this.props.emailLength}</span>
       </div>
     );
   }

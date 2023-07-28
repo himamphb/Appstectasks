@@ -20,17 +20,10 @@ class ContactRedux extends Component {
 
         e.preventDefault();
         const idValue = Date.now()
-        const newContact = {
-            userName : this.state.userName,
-            id: idValue
-        }
-        const newEmail = {
-          userEmail : this.state.userEmail,
-          id: idValue
-        }
+       
 
-        this.props.addContact(newContact)
-        this.props.addEmail(newEmail)
+        this.props.addContact(this.state.userName)
+        this.props.addEmail(this.state.userEmail)
         this.setState({
             userEmail:"",
             userName: ""

@@ -26,8 +26,10 @@ class CommentsRedux extends Component {
     const newComment = {
       id: Date.now(),
       userInput: this.state.inputValue,
+      reply: []
     };
     this.props.addComment(newComment);
+    
     this.setState( {
         inputValue:"",
     })

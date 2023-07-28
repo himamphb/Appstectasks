@@ -21,11 +21,14 @@ class ReplyComponent extends Component {
     const replyObj = {
       id: Date.now(),
       comment: this.state.replyInput,
+      parentId : this.props.idVal
     };
     this.props.replyComment(replyObj);
+
     this.setState({
         reply : false,replyInput : ""
     })
+    this.props.funBoolean()
   };
   render() {
     return (

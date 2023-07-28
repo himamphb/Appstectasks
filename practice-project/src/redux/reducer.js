@@ -2,28 +2,47 @@ import { ADD_COMMENT,DELETE_COMMENT, REPLY_COMMENT, DELETE_PARENT_COMMENT } from
 
 const initialState = {
     comments : [],
-    childCommentsArray : [],
     
 }
  const reducer = (state = initialState , action) => {
     switch(action.type) {
         case ADD_COMMENT : 
+        console.log(state);
         return {
+            
             ...state,
             comments : [...state.comments, action.payload]
         }
         case REPLY_COMMENT : 
-        return {
-            ...state,
-            childCommentsArray : [...state.childCommentsArray, action.payload]
+    
+        const {parentId} = action.payload
+ 
+        const parentIndex = state.comments.findIndex((val) => val.id == parentId)
+        if(parentIndex !== -1){
+            const stateCopy = [...state.comments]
+            const replyCopy = [...state.comments[parentIndex].reply]
+            replyCopy.push(action.payload)
+            stateCopy[parentIndex] = {
+                ...stateCopy[parentIndex],
+               reply :  replyCopy
+            }
+            return {
+                ...state,
+                comments : stateCopy
+            }
+        }else{
+            console.log("else");
+            return state
         }
+     
+        
         case DELETE_COMMENT : 
-        return {
-            ...state,
-            childCommentsArray : state.childCommentsArray.filter((ele) => (
-                ele.id !== action.payload
-            ))
-        }
+        // return {
+        //     ...state,
+        //     childCommentsArray : state.childCommentsArray.filter((ele) => (
+        //         ele.id !== action.payload
+        //     ))
+        // }
         case DELETE_PARENT_COMMENT : 
         return {
             ...state,

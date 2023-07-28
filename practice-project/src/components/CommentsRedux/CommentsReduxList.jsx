@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import ReplyComponent from "./ReplyComponent";
 import { deleteComment, deleteParentComment } from "../../redux/action";
+import ChildReplyRedux from "./ChildReplyRedux";
 
 class CommentsReduxList extends Component {
   constructor(props) {
@@ -19,20 +20,24 @@ class CommentsReduxList extends Component {
   };
   handleDeleteChild = (id) => {
     this.props.deleteComment(id);
+
   };
   handleDelete = (id) => {
     this.props.deleteParentComment(id);
   };
-
-
+  handleBooleanValue = () => {
+    this.setState({
+      reply : false
+    })
+  }
   render() {
     return (
       <>
         <div>
-          {this.props.comments.map((element) => (
+          {this.props.comments.map((element,index) => (
             <div key={element.id}>
               <p>{element.userInput}</p>
-              <button onClick={this.handleChildReply}>Reply</button>
+              <button onClick={() => this.handleChildReply(element.id)}>Reply</button>
               <button
                 onClick={() => {
                   this.handleDelete(element.id);
@@ -40,29 +45,15 @@ class CommentsReduxList extends Component {
               >
                 Delete
               </button>
+              {/* <ReplyComponent idVal = {element.id} funBoolean = {this.handleBooleanValue}/> */}
+              <ChildReplyRedux  keyIndex = {index}/>
+            
             </div>
+            
           ))}
-          {this.state.reply ? <ReplyComponent /> : null}
+          
 
-          <ul>
-            {this.props.childCommentsArray.map((obj) => (
-              <li key={obj.id}>
-                <div>
-                  <p>{obj.comment}</p>
-                  <button
-                    onClick={() => {
-                      this.handleDeleteChild(obj.id);
-                    }}
-                  >
-                    Delete
-                  </button>
-                </div>
-
-                
-                
-              </li>
-            ))}
-          </ul>
+          
         </div>
       </>
     );

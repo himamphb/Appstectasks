@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
-import { addContact } from '../../redux/action';
+import { addContact, addEmail } from '../../redux/action';
 import './Contact.scss'
 class ContactRedux extends Component {
     constructor(props) {
@@ -17,17 +17,25 @@ class ContactRedux extends Component {
         })
     }
     handleSubmit = (e) => {
+
         e.preventDefault();
+        const idValue = Date.now()
         const newContact = {
             userName : this.state.userName,
-            userEmail : this.state.userEmail,
-            id:Date.now()
+            id: idValue
         }
+        const newEmail = {
+          userEmail : this.state.userEmail,
+          id: idValue
+        }
+
         this.props.addContact(newContact)
+        this.props.addEmail(newEmail)
         this.setState({
             userEmail:"",
             userName: ""
         })
+        
     }
   render() {
     return (
@@ -43,4 +51,4 @@ class ContactRedux extends Component {
     )
   }
 }
-export default connect(null,{addContact})(ContactRedux)
+export default connect(null,{addContact,addEmail})(ContactRedux)

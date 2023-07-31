@@ -25,7 +25,8 @@ class ContactReduxLists extends Component {
             </li>
           ))}
           </div>
-          <div style={{width:"50%"}}>
+          <div style={{width:"50%"}}
+          >
           {this.props.email.map((ele, index) => (
             <li key={index} style={{border:"1px solid #fff",height:"2.5rem",width:"100%"}}>
               <p>{ele}</p>
@@ -34,8 +35,8 @@ class ContactReduxLists extends Component {
           </div>
           
         </ul>
-        <span>nameCount : {this.props.nameLength}</span>
-          <span>emailCount : {this.props.emailLength}</span>
+        <span>NameCount : {this.props.nameLength}</span><br></br>
+          <span>EmailCount : {this.props.emailLength}</span>
       </div>
     );
   }

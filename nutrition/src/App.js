@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
      <Reviews/>
-     {/* <ChooseUs/> */}
+     <ChooseUs/>
     </div>
   );
 }

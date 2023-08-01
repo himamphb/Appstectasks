@@ -1,9 +1,10 @@
-import { ADD_CONTACT, ADD_EMAIL, DELETE_CONTACT } from "./action"
+import { ADD_CONTACT, ADD_EMAIL, ADD_FORM, DELETE_CONTACT } from "./action"
 
 
 const initialState = {
     contact : [],
-    email : []
+    email : [],
+    data : []
 }
 
 const reducer = (state = initialState, action) => {
@@ -22,6 +23,11 @@ const reducer = (state = initialState, action) => {
             return {
                     ...state,
                     email : [...state.email , action.payload]
+            }
+        case ADD_FORM : 
+            return {
+                ...state,
+                data: {...state.data,...action.payload},
             }
         default :
         return state;

@@ -18,7 +18,8 @@ class FormAxios extends Component {
       [name]: value,
     });
   };
-  handleSubmit = async (e) => {
+
+  handleSubmit = (e) => {
     e.preventDefault();
     const obj = {
       name: this.state.name,

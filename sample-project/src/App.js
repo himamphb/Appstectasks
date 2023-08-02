@@ -8,14 +8,18 @@ import FormAxios from "./Components/FormAxios/FormAxios";
 // import ContactRedux from './Components/ContactManger/ContactRedux';
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
+import InfiniteScroll from "./Components/InfiniteScroll/InfiniteScroll";
 // import ContactReduxLists from './Components/ContactManger/ContactReduxLists';
 
 export default class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <FormAxios />
-      </Provider>
+      <>
+      <InfiniteScroll/>
+      </>
+      // <Provider store={store}>
+      //   <FormAxios />
+      // </Provider>
     );
   }
 }

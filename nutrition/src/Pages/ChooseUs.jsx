@@ -1,23 +1,20 @@
 import React from "react";
-import doctor from "../Images/doctor-image.jpg"
-import health from "../Images/health.jpg"
-import rupee from "../Images/rupee.jpg"
 import './ChooseUs.scss'
 
 const chooseData = [
   {
-    imageSrc : doctor,
+    icon : "fa-solid fa-user-doctor fa-2xl",
     category: "Specialized Doctors",
     content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum voluptatibus tempore minus nemo molestias, id soluta. Quos voluptate ratione ducimus."
   },
   {
-    imageSrc : health,
+    icon:"fa-solid fa-kitchen-set fa-2xl",
     category: "Health Diet Plan",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum voluptatibus tempore minus nemo molestias, id soluta. Quos voluptate ratione ducimus.",
   },
   {
-    imageSrc: rupee,
+    icon :"fa-solid fa-indian-rupee-sign fa-2xl",
     category: "At Affordable Prices",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum voluptatibus tempore minus nemo molestias, id soluta. Quos voluptate ratione ducimus.",
@@ -34,9 +31,7 @@ const ChooseUs = () => {
           {
             chooseData.map((data) => {
                 return <div className="choose_cards_lists">
-                 
-                    <img src={data.imageSrc} alt="" />
-          
+                 <i class={data.icon}></i>
                   <h2>{data.category}</h2>
                   <p>{data.content}</p>
                 </div>

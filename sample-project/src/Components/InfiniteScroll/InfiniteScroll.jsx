@@ -1,0 +1,76 @@
+import React, { Component } from "react";
+import axios from "axios";
+import Pagination from "@material-ui/lab/Pagination";
+import { Card, CardMedia, Grid } from "@material-ui/core";
+
+export default class InfiniteScroll extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      data: [],
+      currentPage: 1,
+      isLoading: false,
+    };
+  }
+  componentDidMount() {
+    this.fetchData();
+    // window.addEventListener("scroll", this.handleScroll)
+  }
+  // handleScroll = () =>{
+  //     const {currentPage, isLoading} = this.state;
+  //     const {innerHeight, innerWidth , scrollY} = window;
+  //     const {scrollHeight} = document.body
+  //     const val = scrollY + innerHeight > scrollHeight - 300;
+  //     if(val && !isLoading){
+  //         this.fetchData(currentPage + 1)
+  //     }
+  // }
+  fetchData = (page = 1) => {
+    const URL = `https://api.unsplash.com/photos/random?count=10&page=${page}&client_id=PTXzKGc14nPxPw1nwCqKu4T15_ydfmDE-xNDjbUo--E`;
+    axios
+      .get(URL)
+      .then((res) => {
+        this.setState({
+          data: res.data,
+          currentPage: this.state.currentPage + 1,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  handlePage = (e, page) => {
+    // console.log(e);
+    // console.log(page);
+    this.fetchData(page);
+  };
+  render() {
+    return (
+      <div>
+        <Grid container spacing={2}>
+          {this.state.data.map((content) => (
+         <Grid key={content.id} item xs={6} sm={4} md={3}>
+              <Card>
+                <CardMedia
+                  component="img"
+                  alt={content.alt_description}
+                  image={content.urls.regular}
+                  style={{ height: "200px", width: "150px" }}
+                />
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+        
+        <Pagination
+          count={8}
+          color="secondary"
+          onChange={this.handlePage}
+          page={this.state.currentPage}
+          style={{ marginTop: "4rem" }}
+        />
+      </div>
+    );
+  }
+}

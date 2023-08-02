@@ -8,13 +8,13 @@ import review4 from "../Images/review-4.jpg";
 
 const data = [
   {
-    imageSrc: review1,
+    imageSrc: review2,
     name: "Review-1",
     review:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, tenetur? Ipsa laboriosam dolorem in officiis totam laudantium nesciunt. Assumenda, mollitia! Distinctio accusantium nostrum, ratione quas tempora saepe iste expedita doloremque!",
   },
   {
-    imageSrc: review2,
+    imageSrc: review1,
     name: "Review-2",
     review:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, tenetur? Ipsa laboriosam dolorem in officiis totam laudantium nesciunt. Assumenda, mollitia! Distinctio accusantium nostrum, ratione quas tempora saepe iste expedita doloremque!",

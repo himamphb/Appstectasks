@@ -2,6 +2,14 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addForm } from "../../redux/action";
 import axios from "axios";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import "../ReactForms/Formik.scss";
+import * as Yup from "yup";
+
+const validateForm = Yup.object().shape({
+  name: Yup.string().required("Name is required"),
+  password: Yup.string().required("Password is required"),
+});
 
 class FormAxios extends Component {
   constructor(props) {
@@ -12,52 +20,51 @@ class FormAxios extends Component {
       password: "",
     };
   }
-  handleChange = (e) => {
-    const { name, value } = e.target;
-    this.setState({
-      [name]: value,
-    });
-  };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
+  handleSubmit = (values) => {
     const obj = {
-      name: this.state.name,
-      password: this.state.password,
+      name: values.name,
+      password: values.password,
     };
 
-     axios
-      .post("https://reqres.in/api/users", {
+    axios
+      .post("https://reqres.in/api/users/data", {
         obj,
       })
       .then((obj) => {
         this.props.addForm(obj.data.obj);
-        // console.log(obj);
+        console.log(obj);
       })
       .catch((error) => {
         console.error(error);
       });
   };
   render() {
-    
-    const { name, password } = this.state;
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            value={name}
-            onChange={this.handleChange}
-          />
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={this.handleChange}
-          />
-          <button type="submit">submit</button>
-        </form>
+      <div className="parent">
+        <Formik
+          initialValues={{ name: "", password: "" }}
+          validationSchema={validateForm}
+          onSubmit={(val) => {
+            this.handleSubmit(val);
+            val.name = "";
+            val.password = "";
+          }}
+        >
+          <Form>
+            <div className="form-control">
+              <label htmlFor="name">Name</label>
+              <Field type="text" id="name" name="name" />
+              <ErrorMessage name="name" className="error" component="div" />
+            </div>
+            <div className="form-control">
+              <label htmlFor="password">Password</label>
+              <Field type="password" id="password" name="password" />
+              <ErrorMessage name="password" className="error" component="div" />
+            </div>
+            <button type="submit">submit</button>
+          </Form>
+        </Formik>
       </div>
     );
   }

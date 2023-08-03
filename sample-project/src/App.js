@@ -9,17 +9,15 @@ import FormAxios from "./Components/FormAxios/FormAxios";
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
 import InfiniteScroll from "./Components/InfiniteScroll/InfiniteScroll";
+import Todo from "./Components/Todo/Todo";
 // import ContactReduxLists from './Components/ContactManger/ContactReduxLists';
 
 export default class App extends Component {
   render() {
     return (
       <>
-      <InfiniteScroll/>
+      <Todo/>
       </>
-      // <Provider store={store}>
-      //   <FormAxios />
-      // </Provider>
     );
   }
 }

@@ -21,13 +21,13 @@ class FormAxios extends Component {
     };
   }
 
-  handleSubmit = (values) => {
+  handleSubmit = async (values) => {
     const obj = {
       name: values.name,
       password: values.password,
     };
 
-    axios
+   await axios
       .post("https://reqres.in/api/users/data", {
         obj,
       })

@@ -9,7 +9,7 @@ export default class InfiniteScroll extends Component {
 
     this.state = {
       data: [],
-      currentPage: 1,
+      currentPage: 0,
       isLoading: false,
     };
   }
@@ -26,7 +26,7 @@ export default class InfiniteScroll extends Component {
   //         this.fetchData(currentPage + 1)
   //     }
   // }
-  fetchData = (page = 1) => {
+  fetchData = (page = 0) => {
     const URL = `https://api.unsplash.com/photos/random?count=10&page=${page}&client_id=PTXzKGc14nPxPw1nwCqKu4T15_ydfmDE-xNDjbUo--E`;
     axios
       .get(URL)
@@ -37,7 +37,7 @@ export default class InfiniteScroll extends Component {
         });
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
   };
   handlePage = (e, page) => {
@@ -48,15 +48,15 @@ export default class InfiniteScroll extends Component {
   render() {
     return (
       <div>
-        <Grid container spacing={2}>
+        <Grid container>
           {this.state.data.map((content) => (
-         <Grid key={content.id} item xs={6} sm={4} md={3}>
+         <Grid key={content.id} item xs={4} sm={4} md={3}>
               <Card>
                 <CardMedia
                   component="img"
                   alt={content.alt_description}
                   image={content.urls.regular}
-                  style={{ height: "200px", width: "150px" }}
+                  style={{ height: "200px", width: "350px" }}
                 />
               </Card>
             </Grid>
@@ -68,7 +68,7 @@ export default class InfiniteScroll extends Component {
           color="secondary"
           onChange={this.handlePage}
           page={this.state.currentPage}
-          style={{ marginTop: "4rem" }}
+          style={{ marginTop: "0.5rem",marginLeft:"25rem" }}
         />
       </div>
     );
